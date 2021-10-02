@@ -13,6 +13,8 @@ namespace Towers
         public int row;
         public int column;
         public Field field;
+        public int health = 3;
+        public bool canTakeDamage = true;
 
         protected MeshRenderer[] MeshRenderers;
         
@@ -144,9 +146,9 @@ namespace Towers
             AttachToField(PlaceableField.ActiveField);
         }
 
-        private void AttachToField(Field field)
+        private void AttachToField(Field f)
         {
-            var position = field.transform.position;
+            var position = f.transform.position;
             
             transform.position = new Vector3(
                 position.x,
@@ -162,6 +164,27 @@ namespace Towers
         protected abstract void OnPlace();
         protected abstract void OnUpdate();
 
+        #endregion
+        
+        #region HEALTH
+
+        public void TakeDamage(int damage = 1)
+        {
+            if (!canTakeDamage)
+            {
+                return;
+            }
+            
+            health -= damage;
+            if (health > 0)
+            {
+                return;
+            }
+
+            field.tower = null;
+            Destroy(gameObject);
+        }
+        
         #endregion
     }
 }

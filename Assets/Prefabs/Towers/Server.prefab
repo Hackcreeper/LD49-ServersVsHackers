@@ -114,6 +114,9 @@ MonoBehaviour:
   blueprintMaterial: {fileID: 2100000, guid: 49b0221375b1a4cb3b1b9703be74005b, type: 2}
   row: 0
   column: 0
+  field: {fileID: 0}
+  health: 0
+  canTakeDamage: 0
   corruptedMaterial: {fileID: 2100000, guid: e58be320f107948a9b367ad7e7e9c1b9, type: 2}
   corrupted: 0
 --- !u!1 &5261248719857667619

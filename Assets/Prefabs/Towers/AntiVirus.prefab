@@ -115,6 +115,8 @@ MonoBehaviour:
   row: 0
   column: 0
   field: {fileID: 0}
+  health: 4
+  canTakeDamage: 1
   cooldown: 2
   projectilePrefab: {fileID: 8494332106282051341, guid: c49985b40e94045cdb8a9e4737a6e44e, type: 3}
 --- !u!1 &3644803663533777716

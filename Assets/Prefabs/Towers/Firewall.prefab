@@ -113,3 +113,6 @@ MonoBehaviour:
   blueprintMaterial: {fileID: 2100000, guid: 63bcebbc8b7734b72891f080c37c2b77, type: 2}
   row: 0
   column: 0
+  field: {fileID: 0}
+  health: 10
+  canTakeDamage: 1

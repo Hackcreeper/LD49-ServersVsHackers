@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8bbd21bce6e426fa817363461faa0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
+  enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
   cooldown: 3
 --- !u!114 &627411610
 MonoBehaviour:

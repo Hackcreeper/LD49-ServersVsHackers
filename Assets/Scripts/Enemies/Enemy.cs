@@ -90,7 +90,7 @@ namespace Enemies
         
         #region HEALTH
         
-        public void TakeDamage(int damage = 1)
+        public virtual void TakeDamage(int damage = 1)
         {
             health -= damage;
             if (health > 0)

@@ -39,8 +39,6 @@ public class FieldGenerator : MonoBehaviour
 
     private Field CreateField(GameObject prefab, int x, int y)
     {
-        // (amount + 1) / 2
-        
         var field = Instantiate(
             prefab,
             new Vector3(x - ((columns + 1) / 2f), 0, y - ((rows - 1) / 2f)),

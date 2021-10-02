@@ -9,7 +9,17 @@ namespace Towers
         public GameObject projectilePrefab;
 
         private float _timer;
-        
+        private bool _active;
+        private Animator _animator;
+        private static readonly int Active = Animator.StringToHash("active");
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            _animator = GetComponent<Animator>();
+        }
+
         protected override void OnPlace()
         {
             _timer = cooldown;
@@ -17,13 +27,26 @@ namespace Towers
 
         protected override void OnUpdate()
         {
+            var hasEnemy = EnemySpawner.Instance.HasEnemyAfter(row, column);
+            if (hasEnemy && !_active)
+            {
+                _active = true;
+                _animator.SetBool(Active, true);
+                _timer = cooldown;
+            }
+            else if (!hasEnemy && _active)
+            {
+                _active = false;
+                _animator.SetBool(Active, false);
+            }
+            
             _timer -= Time.deltaTime;
             if (_timer > 0)
             {
                 return;
             }
 
-            if (!EnemySpawner.Instance.HasEnemyAfter(row, column))
+            if (!hasEnemy)
             {
                 _timer = 0f;
                 return;

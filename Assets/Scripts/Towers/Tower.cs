@@ -23,7 +23,7 @@ namespace Towers
 
         #region UNITY
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _camera = Camera.main;
             MeshRenderers = GetComponentsInChildren<MeshRenderer>();

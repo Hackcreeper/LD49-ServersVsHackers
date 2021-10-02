@@ -136,7 +136,7 @@ namespace Towers
             var mouseWorldPosition = _camera.ScreenToWorldPoint(new Vector3(
                 mouseScreenPosition.x,
                 mouseScreenPosition.y,
-                _camera.nearClipPlane + 5
+                _camera.nearClipPlane + 8
             ));
             
             transform.position = mouseWorldPosition;

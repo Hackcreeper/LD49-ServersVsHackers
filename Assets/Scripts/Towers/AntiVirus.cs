@@ -7,6 +7,7 @@ namespace Towers
     {
         public float cooldown = 2;
         public GameObject projectilePrefab;
+        public Transform projectileSpawn;
 
         private float _timer;
         private bool _active;
@@ -54,15 +55,11 @@ namespace Towers
             
             _timer = cooldown;
 
-            var projectile = Instantiate(
+            Instantiate(
                 projectilePrefab,
-                transform.position,
+                projectileSpawn.position,
                 Quaternion.identity
             );
-
-            var component = projectile.GetComponent<Projectile>();
-            component.row = row;
-            component.currentField = field;
         }
     }
 }

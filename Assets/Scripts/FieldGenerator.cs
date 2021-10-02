@@ -83,4 +83,9 @@ public class FieldGenerator : MonoBehaviour
         
         return _rows[row][currentField.column + 1];
     }
+
+    public void Clean()
+    {
+        Instance = null;
+    }
 }

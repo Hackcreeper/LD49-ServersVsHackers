@@ -117,6 +117,7 @@ MonoBehaviour:
   field: {fileID: 0}
   health: 0
   canTakeDamage: 0
+  data: {fileID: 0}
   corruptedMaterial: {fileID: 2100000, guid: e58be320f107948a9b367ad7e7e9c1b9, type: 2}
   corrupted: 0
 --- !u!1 &5261248719857667619

@@ -33,13 +33,6 @@ public class Projectile : MonoBehaviour
             return;
         }
         
-        // if (currentField.tower)
-        // {
-        //     transform.position = GetRealPositionOfField(currentField);
-        //     _timer = 0;
-        //     return;
-        // }
-            
         _timer += Time.deltaTime / tileMoveSpeed;
         transform.position = Vector3.Lerp(
             _startPosition,

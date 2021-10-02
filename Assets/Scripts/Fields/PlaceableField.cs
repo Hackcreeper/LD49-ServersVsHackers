@@ -32,12 +32,19 @@ namespace Fields
 
         public void PlaceTower(Tower t)
         {
+            Coins.Instance.amount -= t.data.price;
+            
             tower = t;
             MeshRenderer.material = defaultMaterial;
         }
 
         public bool CanPlace(Tower other)
         {
+            if (Coins.Instance.amount < other.data.price)
+            {
+                return false;
+            }
+            
             return tower == null;
         }
     }

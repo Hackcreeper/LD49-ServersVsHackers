@@ -15,6 +15,7 @@ namespace Towers
         public Field field;
         public int health = 3;
         public bool canTakeDamage = true;
+        public TowerData data;
 
         protected MeshRenderer[] MeshRenderers;
         

@@ -1,4 +1,3 @@
-using System;
 using Fields;
 using UnityEngine;
 
@@ -8,13 +7,14 @@ namespace Enemies
     {
         public float tileMoveSpeed = 2;
         public int row;
+        public int health = 3;
 
         private float _timer;
         private Vector3 _startPosition;
 
         public Field currentField;
         public Field targetField;
-
+        
         private void Start()
         {
             TargetNextField();
@@ -66,6 +66,17 @@ namespace Enemies
                 position.y + .5f,
                 position.z
             );
+        }
+
+        public void TakeDamage(int damage = 1)
+        {
+            health -= damage;
+            if (health > 0)
+            {
+                return;
+            }
+            
+            EnemySpawner.Instance.KillEnemy(this);
         }
     }
 }

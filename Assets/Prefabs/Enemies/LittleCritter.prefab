@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4397266751934811026}
   - component: {fileID: 4397266751934811027}
   - component: {fileID: 5653471136933703283}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LittleCritter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,5 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMoveSpeed: 2
   row: 0
+  health: 3
   currentField: {fileID: 0}
   targetField: {fileID: 0}

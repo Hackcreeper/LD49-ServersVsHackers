@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         {
             foreach (var enemy in enemies)
             {
-                EnemySpawner.Instance.KillEnemy(enemy);
+                enemy.TakeDamage();
             }
             
             Destroy(gameObject);

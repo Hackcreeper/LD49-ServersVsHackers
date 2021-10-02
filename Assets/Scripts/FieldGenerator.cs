@@ -56,7 +56,7 @@ public class FieldGenerator : MonoBehaviour
         return component;
     }
     
-    public Field GetNextFieldInRow(int row, Field currentField)
+    public Field GetPreviousFieldInRow(int row, Field currentField)
     {
         if (currentField == null)
         {
@@ -69,5 +69,20 @@ public class FieldGenerator : MonoBehaviour
         }
         
         return _rows[row][currentField.column - 1];
+    }
+    
+    public Field GetNextFieldInRow(int row, Field currentField)
+    {
+        if (currentField == null)
+        {
+            return _rows[row][0];
+        }
+
+        if (currentField.column >= columns + 1)
+        {
+            return _rows[row][columns + 1];
+        }
+        
+        return _rows[row][currentField.column + 1];
     }
 }

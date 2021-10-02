@@ -114,6 +114,9 @@ MonoBehaviour:
   blueprintMaterial: {fileID: 2100000, guid: b6f87d044918741fe9837c183deaac3c, type: 2}
   row: 0
   column: 0
+  field: {fileID: 0}
+  cooldown: 2
+  projectilePrefab: {fileID: 8494332106282051341, guid: c49985b40e94045cdb8a9e4737a6e44e, type: 3}
 --- !u!1 &3644803663533777716
 GameObject:
   m_ObjectHideFlags: 0

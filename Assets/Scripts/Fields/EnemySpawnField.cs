@@ -8,5 +8,12 @@ namespace Fields
         {
             EnemySpawner.Instance.AddSpawnField(this);
         }
+
+        public override void OnProjectileEnter(Projectile projectile)
+        {
+            base.OnProjectileEnter(projectile);
+            
+            Destroy(projectile.gameObject);
+        }
     }
 }

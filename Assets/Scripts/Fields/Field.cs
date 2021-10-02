@@ -26,5 +26,9 @@ namespace Fields
         public virtual void OnEnemyEnter(Enemy enemy)
         {
         }
+        
+        public virtual void OnProjectileEnter(Projectile projectile)
+        {
+        }
     }
 }

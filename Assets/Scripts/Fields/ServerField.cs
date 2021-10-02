@@ -24,7 +24,7 @@ namespace Fields
             base.OnEnemyEnter(enemy);
             
             _server.Corrupt();
-            Destroy(enemy.gameObject);
+            EnemySpawner.Instance.KillEnemy(enemy);
         }
     }
 }

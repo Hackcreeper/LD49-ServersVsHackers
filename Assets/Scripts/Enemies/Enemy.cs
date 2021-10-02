@@ -47,7 +47,7 @@ namespace Enemies
 
         private void TargetNextField()
         {
-            SetTarget(FieldGenerator.Instance.GetNextFieldInRow(row, currentField));
+            SetTarget(FieldGenerator.Instance.GetPreviousFieldInRow(row, currentField));
         }
 
         public void SetTarget(Field target)

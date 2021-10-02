@@ -16,5 +16,15 @@ namespace Towers
                 meshRenderer.material = corruptedMaterial;
             }
         }
+
+        protected override void OnPlace()
+        {
+            
+        }
+
+        protected override void OnUpdate()
+        {
+            
+        }
     }
 }

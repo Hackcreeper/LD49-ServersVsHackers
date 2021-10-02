@@ -12,10 +12,13 @@ namespace Towers
         public Material blueprintMaterial;
         public int row;
         public int column;
+        public Field field;
 
         protected MeshRenderer[] MeshRenderers;
         
         private Camera _camera;
+
+        #region UNITY
 
         private void Awake()
         {
@@ -28,7 +31,7 @@ namespace Towers
             }
         }
 
-        private void Start()
+        protected void Start()
         {
             if (!blueprint)
             {
@@ -48,7 +51,11 @@ namespace Towers
                 UpdateBlueprint();
                 return;
             }
+            
+            OnUpdate();
         }
+
+        #endregion
         
         #region BLUEPRINT
         
@@ -70,22 +77,25 @@ namespace Towers
             AttachToActiveField();
         }
 
-        public void PlaceBlueprintAtField(Field field)
+        public void PlaceBlueprintAtField(Field f)
         {
             blueprint = false;
-            AttachToField(field);
+            AttachToField(f);
             
             foreach (var meshRenderer in MeshRenderers)
             {
                 meshRenderer.material = defaultMaterial;
             }
 
-            row = field.row;
-            column = field.column;
+            row = f.row;
+            column = f.column;
+            field = f;
 
-            field.tower = this;
+            f.tower = this;
 
             OnHand = null;
+            
+            OnPlace();
         }
 
         private void PlaceBlueprint()
@@ -105,10 +115,12 @@ namespace Towers
 
             row = PlaceableField.ActiveField.row;
             column = PlaceableField.ActiveField.column;
-            
+            field = PlaceableField.ActiveField;
+
             PlaceableField.ActiveField.PlaceTower(this);
 
             OnHand = null;
+            OnPlace();
         }
         
         #endregion
@@ -143,6 +155,13 @@ namespace Towers
             );
         }
     
+        #endregion
+        
+        #region ABSTRACT
+
+        protected abstract void OnPlace();
+        protected abstract void OnUpdate();
+
         #endregion
     }
 }

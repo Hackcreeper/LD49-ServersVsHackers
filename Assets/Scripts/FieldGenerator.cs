@@ -1,29 +1,68 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using Enemies;
+using Fields;
 using UnityEngine;
 
 public class FieldGenerator : MonoBehaviour
 {
-    public GameObject fieldPrefab;
+    public static FieldGenerator Instance { get; private set; }
+    
+    public GameObject placeableFieldPrefab;
+    public GameObject enemySpawnFieldPrefab;
+    public GameObject serverFieldPrefab;
+
     public int rows = 5;
     public int columns = 9;
 
+    private Dictionary<int, List<Field>> _rows = new Dictionary<int, List<Field>>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        for (var x = 0; x < columns; x++)
+        for (var y = 0; y < rows; y++)
         {
-            for (var y = 0; y < rows; y++)
-            {
-                var field = Instantiate(
-                    fieldPrefab,
-                    new Vector3(x-4, 0, y-2),
-                    Quaternion.identity
-                );
+            _rows.Add(y, new List<Field>());
+            
+            _rows[y].Add(CreateField(serverFieldPrefab, 0, y));
 
-                field.name = $"Field_{x}_{y}";
-                field.GetComponent<Field>().SetCoords(x, y);
-                field.transform.SetParent(transform);
+            for (var x = 1; x < columns + 1; x++)
+            {
+                _rows[y].Add(CreateField(placeableFieldPrefab, x, y));
             }
+
+            _rows[y].Add(CreateField(enemySpawnFieldPrefab, columns + 1, y));
         }
+    }
+
+    private Field CreateField(GameObject prefab, int x, int y)
+    {
+        var field = Instantiate(
+            prefab,
+            new Vector3(x - 5, 0, y - 2),
+            Quaternion.identity
+        );
+
+        field.name = $"Field_{x}_{y}";
+        field.transform.SetParent(transform);
+        
+        var component = field.GetComponent<Field>();
+        component.SetCoords(x, y);
+
+        return component;
+    }
+    
+    public Field GetNextFieldInRow(int row, Field currentField)
+    {
+        if (currentField == null)
+        {
+            return _rows[row][_rows[row].Count - 1];
+        }
+
+        return _rows[row][currentField.column - 1];
     }
 }

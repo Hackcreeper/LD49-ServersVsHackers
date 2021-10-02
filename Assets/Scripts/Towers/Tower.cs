@@ -1,4 +1,4 @@
-using System;
+using Fields;
 using UnityEngine;
 
 namespace Towers
@@ -45,7 +45,7 @@ namespace Towers
         
         private void UpdateBlueprint()
         {
-            if (!Field.ActiveField)
+            if (!PlaceableField.ActiveField)
             {
                 AttachToMouse();
                 
@@ -63,7 +63,7 @@ namespace Towers
 
         private void PlaceBlueprint()
         {
-            if (!Field.ActiveField.CanPlace(this))
+            if (!PlaceableField.ActiveField.CanPlace(this))
             {
                 return;
             }
@@ -76,10 +76,10 @@ namespace Towers
                 meshRenderer.material = defaultMaterial;
             }
 
-            row = Field.ActiveField.row;
-            column = Field.ActiveField.column;
+            row = PlaceableField.ActiveField.row;
+            column = PlaceableField.ActiveField.column;
             
-            Field.ActiveField.PlaceTower(this);
+            PlaceableField.ActiveField.PlaceTower(this);
 
             OnHand = null;
         }
@@ -102,7 +102,7 @@ namespace Towers
 
         private void AttachToActiveField()
         {
-            var position = Field.ActiveField.transform.position;
+            var position = PlaceableField.ActiveField.transform.position;
             
             transform.position = new Vector3(
                 position.x,

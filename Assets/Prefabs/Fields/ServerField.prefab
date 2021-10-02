@@ -110,3 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   row: 0
   column: 0
+  tower: {fileID: 0}
+  serverPrefab: {fileID: 720131632003814078, guid: b3621a2d0b3d44e8fa044f3689b22c20, type: 3}

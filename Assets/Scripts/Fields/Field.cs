@@ -1,3 +1,4 @@
+using Enemies;
 using Towers;
 using UnityEngine;
 
@@ -7,7 +8,8 @@ namespace Fields
     {
         public int row;
         public int column;
-        
+        public Tower tower;
+
         protected MeshRenderer MeshRenderer;
 
         private void Awake()
@@ -19,6 +21,10 @@ namespace Fields
         {
             this.row = y;
             this.column = x;
+        }
+
+        public virtual void OnEnemyEnter(Enemy enemy)
+        {
         }
     }
 }

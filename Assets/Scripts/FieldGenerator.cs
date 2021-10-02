@@ -63,6 +63,11 @@ public class FieldGenerator : MonoBehaviour
             return _rows[row][_rows[row].Count - 1];
         }
 
+        if (currentField.column <= 0)
+        {
+            return _rows[row][0];
+        }
+        
         return _rows[row][currentField.column - 1];
     }
 }

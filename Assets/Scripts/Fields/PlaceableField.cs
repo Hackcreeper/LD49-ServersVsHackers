@@ -11,8 +11,6 @@ namespace Fields
         public Material hoverErrorMaterial;
         public Material hoverOkMaterial;
         
-        public Tower tower;
-        
         private void OnMouseEnter()
         {
             if (Tower.OnHand)

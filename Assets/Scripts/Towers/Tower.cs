@@ -13,20 +13,29 @@ namespace Towers
         public int row;
         public int column;
 
+        protected MeshRenderer[] MeshRenderers;
+        
         private Camera _camera;
-        private MeshRenderer[] _meshRenderers;
 
         private void Awake()
         {
             _camera = Camera.main;
-            _meshRenderers = GetComponentsInChildren<MeshRenderer>();
+            MeshRenderers = GetComponentsInChildren<MeshRenderer>();
 
-            OnHand = this;
+            if (blueprint)
+            {
+                OnHand = this;
+            }
         }
 
         private void Start()
         {
-            foreach (var meshRenderer in _meshRenderers)
+            if (!blueprint)
+            {
+                return;
+            }
+            
+            foreach (var meshRenderer in MeshRenderers)
             {
                 meshRenderer.material = blueprintMaterial;
             }
@@ -61,6 +70,24 @@ namespace Towers
             AttachToActiveField();
         }
 
+        public void PlaceBlueprintAtField(Field field)
+        {
+            blueprint = false;
+            AttachToField(field);
+            
+            foreach (var meshRenderer in MeshRenderers)
+            {
+                meshRenderer.material = defaultMaterial;
+            }
+
+            row = field.row;
+            column = field.column;
+
+            field.tower = this;
+
+            OnHand = null;
+        }
+
         private void PlaceBlueprint()
         {
             if (!PlaceableField.ActiveField.CanPlace(this))
@@ -71,7 +98,7 @@ namespace Towers
             blueprint = false;
             AttachToActiveField();
             
-            foreach (var meshRenderer in _meshRenderers)
+            foreach (var meshRenderer in MeshRenderers)
             {
                 meshRenderer.material = defaultMaterial;
             }
@@ -102,7 +129,12 @@ namespace Towers
 
         private void AttachToActiveField()
         {
-            var position = PlaceableField.ActiveField.transform.position;
+            AttachToField(PlaceableField.ActiveField);
+        }
+
+        private void AttachToField(Field field)
+        {
+            var position = field.transform.position;
             
             transform.position = new Vector3(
                 position.x,

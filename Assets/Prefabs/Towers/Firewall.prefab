@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 720131632003814073}
   - component: {fileID: 720131632003814072}
   - component: {fileID: 720131632003814079}
-  - component: {fileID: 1325459091873713963}
+  - component: {fileID: 2888627022570101653}
   m_Layer: 2
   m_Name: Firewall
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1325459091873713963
+--- !u!114 &2888627022570101653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,11 +105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 720131632003814078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37fd1b2e97410aa95dc79c60b2d1a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 38e6f01d1b7d4cbeb95e752259f4c846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blueprint: 1
-  defaultMaterial: {fileID: 2100000, guid: 0f02771bda09d4ed98846dfedce8174b, type: 2}
-  blueprintMaterial: {fileID: 2100000, guid: b6f87d044918741fe9837c183deaac3c, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 6539084bc7c0441df976fb1a06d45d35, type: 2}
+  blueprintMaterial: {fileID: 2100000, guid: 63bcebbc8b7734b72891f080c37c2b77, type: 2}
   row: 0
   column: 0

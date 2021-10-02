@@ -8,8 +8,6 @@ namespace Towers
         public static Tower OnHand;
         
         public bool blueprint = true;
-        public Material defaultMaterial;
-        public Material blueprintMaterial;
         public int row;
         public int column;
         public Field field;
@@ -17,8 +15,6 @@ namespace Towers
         public bool canTakeDamage = true;
         public TowerData data;
 
-        protected MeshRenderer[] MeshRenderers;
-        
         private Camera _camera;
 
         #region UNITY
@@ -26,27 +22,13 @@ namespace Towers
         protected virtual void Awake()
         {
             _camera = Camera.main;
-            MeshRenderers = GetComponentsInChildren<MeshRenderer>();
 
             if (blueprint)
             {
                 OnHand = this;
             }
         }
-
-        protected void Start()
-        {
-            if (!blueprint)
-            {
-                return;
-            }
-            
-            // foreach (var meshRenderer in MeshRenderers)
-            // {
-            //     meshRenderer.material = blueprintMaterial;
-            // }
-        }
-
+        
         private void Update()
         {
             if (blueprint)
@@ -85,11 +67,6 @@ namespace Towers
             blueprint = false;
             AttachToField(f);
             
-            // foreach (var meshRenderer in MeshRenderers)
-            // {
-            //     meshRenderer.material = defaultMaterial;
-            // }
-
             row = f.row;
             column = f.column;
             field = f;
@@ -111,11 +88,6 @@ namespace Towers
             blueprint = false;
             AttachToActiveField();
             
-            // foreach (var meshRenderer in MeshRenderers)
-            // {
-            //     meshRenderer.material = defaultMaterial;
-            // }
-
             row = PlaceableField.ActiveField.row;
             column = PlaceableField.ActiveField.column;
             field = PlaceableField.ActiveField;

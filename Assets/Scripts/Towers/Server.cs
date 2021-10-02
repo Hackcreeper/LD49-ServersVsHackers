@@ -7,11 +7,20 @@ namespace Towers
         public Material corruptedMaterial;
         public bool corrupted;
 
+        private MeshRenderer[] _meshRenderers;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            _meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        }
+
         public void Corrupt()
         {
             corrupted = true;
             
-            foreach (var meshRenderer in MeshRenderers)
+            foreach (var meshRenderer in _meshRenderers)
             {
                 meshRenderer.material = corruptedMaterial;
             }

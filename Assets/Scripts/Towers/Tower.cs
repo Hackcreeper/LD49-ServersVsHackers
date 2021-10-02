@@ -41,10 +41,10 @@ namespace Towers
                 return;
             }
             
-            foreach (var meshRenderer in MeshRenderers)
-            {
-                meshRenderer.material = blueprintMaterial;
-            }
+            // foreach (var meshRenderer in MeshRenderers)
+            // {
+            //     meshRenderer.material = blueprintMaterial;
+            // }
         }
 
         private void Update()
@@ -85,10 +85,10 @@ namespace Towers
             blueprint = false;
             AttachToField(f);
             
-            foreach (var meshRenderer in MeshRenderers)
-            {
-                meshRenderer.material = defaultMaterial;
-            }
+            // foreach (var meshRenderer in MeshRenderers)
+            // {
+            //     meshRenderer.material = defaultMaterial;
+            // }
 
             row = f.row;
             column = f.column;
@@ -111,10 +111,10 @@ namespace Towers
             blueprint = false;
             AttachToActiveField();
             
-            foreach (var meshRenderer in MeshRenderers)
-            {
-                meshRenderer.material = defaultMaterial;
-            }
+            // foreach (var meshRenderer in MeshRenderers)
+            // {
+            //     meshRenderer.material = defaultMaterial;
+            // }
 
             row = PlaceableField.ActiveField.row;
             column = PlaceableField.ActiveField.column;

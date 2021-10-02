@@ -169,5 +169,5 @@ MonoBehaviour:
   placeableFieldPrefab: {fileID: 692957672491348299, guid: 357d4a98f748942339c669e2fa6925f0, type: 3}
   enemySpawnFieldPrefab: {fileID: 692957672491348299, guid: bdd4f15586a334d748c8f443fe702278, type: 3}
   serverFieldPrefab: {fileID: 692957672491348299, guid: 209f28d715f844d23a0db5165563395f, type: 3}
-  rows: 1
+  rows: 5
   columns: 9

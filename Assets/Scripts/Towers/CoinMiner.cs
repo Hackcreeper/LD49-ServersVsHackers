@@ -4,9 +4,11 @@ namespace Towers
 {
     public class CoinMiner : Tower
     {
-        public float cooldown = 2f;
-        public int producing = 25;
-        
+        public float cooldown = 6f;
+        public int producing = 20;
+        public int particleEmit = 4;
+        public ParticleSystem particles;
+
         private float _timer = 0f;
         
         protected override void OnPlace()
@@ -23,6 +25,7 @@ namespace Towers
             }
 
             Coins.Instance.amount += producing;
+            particles.Emit(particleEmit);
             _timer = cooldown;
         }
     }

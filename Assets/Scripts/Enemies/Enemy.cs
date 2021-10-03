@@ -1,4 +1,5 @@
 using Fields;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace Enemies
@@ -26,7 +27,7 @@ namespace Enemies
 
         protected virtual void Update()
         {
-            if (currentField.tower)
+            if (currentField.GetTower())
             {
                 transform.position = GetRealPositionOfField(currentField);
                 _timer = 0;
@@ -37,7 +38,7 @@ namespace Enemies
                     return;
                 }
                 
-                currentField.tower.TakeDamage();
+                currentField.GetTower().TakeDamage();
                 _attackTimer = attackCooldown;
                 
                 return;

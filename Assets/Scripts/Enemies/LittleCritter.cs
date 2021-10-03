@@ -8,7 +8,7 @@ namespace Enemies
 
         protected override void Update()
         {
-            animator?.SetBool("walking", currentField.tower == null);
+            animator?.SetBool("walking", currentField.GetTower() == null);
             
             base.Update();
         }

@@ -14,6 +14,7 @@ namespace Towers
         public int health = 3;
         public bool canTakeDamage = true;
         public TowerData data;
+        public bool requiresUsb;
 
         private Camera _camera;
 
@@ -126,10 +127,12 @@ namespace Towers
         private void AttachToField(Field f)
         {
             var position = f.transform.position;
+
+            var offset = f.GetTower() is UsbSlot ? 0.15f : 0.5f;
             
             transform.position = new Vector3(
                 position.x,
-                position.y + 0.5f,
+                position.y + offset,
                 position.z
             );
         }
@@ -157,8 +160,7 @@ namespace Towers
             {
                 return;
             }
-
-            field.tower = null;
+            
             Destroy(gameObject);
         }
         

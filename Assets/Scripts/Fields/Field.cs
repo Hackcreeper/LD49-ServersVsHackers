@@ -30,5 +30,15 @@ namespace Fields
         public virtual void OnProjectileEnter(Projectile projectile)
         {
         }
+
+        public Tower GetTower()
+        {
+            if (tower is UsbSlot slot)
+            {
+                return slot.GetTower();
+            }
+            
+            return tower;
+        }
     }
 }

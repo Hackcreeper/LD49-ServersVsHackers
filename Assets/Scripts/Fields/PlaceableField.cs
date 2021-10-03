@@ -33,8 +33,18 @@ namespace Fields
         public void PlaceTower(Tower t)
         {
             Coins.Instance.amount -= t.data.price;
+
+            if (tower && tower is UsbSlot slot)
+            {
+                Debug.Log("Slotty");
+                slot.pluggedTower = t;
+            }
+            else
+            {
+                Debug.Log("no slotty");
+                tower = t;
+            }
             
-            tower = t;
             MeshRenderer.material = defaultMaterial;
         }
 
@@ -44,8 +54,23 @@ namespace Fields
             {
                 return false;
             }
-            
-            return tower == null;
+
+            if (tower == null)
+            {
+                return !other.requiresUsb;
+            }
+
+            if (tower is UsbSlot slot)
+            {
+                if (slot.pluggedTower)
+                {
+                    return false;
+                }
+                
+                return other.requiresUsb;
+            }
+
+            return false;
         }
     }
 }

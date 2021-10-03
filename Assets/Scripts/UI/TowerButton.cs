@@ -1,6 +1,7 @@
 using TMPro;
 using Towers;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace UI
@@ -11,6 +12,7 @@ namespace UI
         public TowerData tower;
         public TextMeshProUGUI title;
         public TextMeshProUGUI costs;
+        public Image renderShot;
 
         private void Start()
         {
@@ -18,6 +20,7 @@ namespace UI
 
             title.text = tower.title;
             costs.text = tower.price.ToString();
+            renderShot.sprite = tower.renderShot;
         }
         
         private void OnBuy()

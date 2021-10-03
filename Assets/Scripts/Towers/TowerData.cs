@@ -8,5 +8,6 @@ namespace Towers
         public GameObject prefab;
         public string title;
         public int price;
+        public Sprite renderShot;
     }
 }

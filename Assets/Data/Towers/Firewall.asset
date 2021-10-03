@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 720131632003814078, guid: 63bf1478262ae46abbd43495af027d4b, type: 3}
   title: Firewall
   price: 75
+  renderShot: {fileID: 21300000, guid: 00778c24cb32548e98bea0c73090e9dd, type: 3}

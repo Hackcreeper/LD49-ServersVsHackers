@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 720131632003814078, guid: 91999437ea5c146e5b398a97938f9875, type: 3}
   title: Anti Virus
   price: 100
+  renderShot: {fileID: 21300000, guid: db9b7a314103d47fab1e84fc1b76a45e, type: 3}

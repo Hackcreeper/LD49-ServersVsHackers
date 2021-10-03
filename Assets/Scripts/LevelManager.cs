@@ -86,4 +86,6 @@ public class LevelManager : MonoBehaviour
 
         LoadLevel(nextLevel);
     }
+
+    public int GetCurrentLevel() => currentLevel;
 }

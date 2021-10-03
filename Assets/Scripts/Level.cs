@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using UI;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -10,6 +12,7 @@ public class Level : MonoBehaviour
     private List<PlannedEnemy> _planned = new List<PlannedEnemy>();
     private int _lastSpawned = -1;
     private float _timer = 0;
+    private LevelState _state = LevelState.Started;
 
     private void Start()
     {
@@ -17,10 +20,17 @@ public class Level : MonoBehaviour
         _planned.Sort((a, b) => a.time - b.time);
 
         Coins.Instance.amount = startCoins;
+
+        StartCoroutine(ShowIntro());
     }
 
     private void Update()
     {
+        if (_state != LevelState.Running)
+        {
+            return;
+        }
+        
         if (_lastSpawned + 1 >= _planned.Count)
         {
             CheckForWin();
@@ -45,5 +55,24 @@ public class Level : MonoBehaviour
         }
         
         LevelManager.Instance.LoadNextLevel();
+    }
+
+    private IEnumerator ShowIntro()
+    {
+        Banner.Instance.ShowIntroBanner();
+
+        yield return new WaitForSeconds(2);
+
+        _state = LevelState.Running;
+        
+        Banner.Instance.HideIntroBanner();
+    }
+
+    private enum LevelState
+    {
+        Started,
+        Running,
+        Finished,
+        Lost
     }
 }

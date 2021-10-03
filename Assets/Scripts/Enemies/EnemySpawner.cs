@@ -9,63 +9,49 @@ namespace Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
-        public static EnemySpawner Instance { get; private set; } 
-        
-        public GameObject enemyPrefab;
-        public float cooldown = 3;
+        public static EnemySpawner Instance { get; private set; }
 
         private List<EnemySpawnField> _spawnFields = new List<EnemySpawnField>();
-        private float _timer;
         private Dictionary<int, List<Enemy>> _enemies = new Dictionary<int, List<Enemy>>();
 
         private void Awake()
         {
             Instance = this;
-            _timer = cooldown;
         }
 
         public void AddSpawnField(EnemySpawnField field)
         {
             _spawnFields.Add(field);
         }
-        
-        private void Update()
+
+        public void SpawnEnemy(GameObject prefab, int amount = 1)
         {
-            _timer -= Time.deltaTime;
-            if (_timer > 0)
+            for (var i = 0; i < amount; i++)
             {
-                return;
+                var spawner = _spawnFields[Random.Range(0, _spawnFields.Count)];
+                var position = spawner.transform.position;
+
+                var enemy = Instantiate(
+                    prefab,
+                    new Vector3(
+                        position.x + .5f,
+                        position.y + .5f,
+                        position.z
+                    ),
+                    Quaternion.identity
+                );
+
+                var component = enemy.GetComponent<Enemy>();
+                component.row = spawner.row;
+                component.currentField = spawner;
+
+                if (!_enemies.ContainsKey(spawner.row))
+                {
+                    _enemies.Add(spawner.row, new List<Enemy>());
+                }
+
+                _enemies[spawner.row].Add(component);
             }
-
-            SpawnEnemy();
-            _timer = cooldown;
-        }
-
-        private void SpawnEnemy()
-        {
-            var spawner = _spawnFields[Random.Range(0, _spawnFields.Count)];
-            var position = spawner.transform.position;
-            
-            var enemy = Instantiate(
-                enemyPrefab,
-                new Vector3(
-                    position.x + .5f,
-                    position.y + .5f,
-                    position.z
-                ),
-                Quaternion.identity
-            );
-
-            var component = enemy.GetComponent<Enemy>();
-            component.row = spawner.row;
-            component.currentField = spawner;
-
-            if (!_enemies.ContainsKey(spawner.row))
-            {
-                _enemies.Add(spawner.row, new List<Enemy>());
-            }
-            
-            _enemies[spawner.row].Add(component);
         }
 
         public void KillEnemy(Enemy enemy)
@@ -92,6 +78,16 @@ namespace Enemies
             }
 
             return _enemies[row].Where(enemy => enemy.currentField.column == column).ToArray();
+        }
+
+        public void Clean()
+        {
+            Instance = null;
+        }
+
+        public int GetTotalEnemies()
+        {
+            return _enemies.Values.Sum(list => list.Count);
         }
     }
 }

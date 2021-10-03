@@ -1,4 +1,5 @@
 using System;
+using Enemies;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance { get; private set; }
     
     private int? _sceneToBeLoaded = null;
+    private int currentLevel;
 
     private void Awake()
     {
@@ -24,6 +26,8 @@ public class LevelManager : MonoBehaviour
         // Probably added the level manually via editor
         if (SceneManager.sceneCount > 1)
         {
+            currentLevel = int.Parse(SceneManager.GetSceneAt(1).name.Replace("Level", ""));
+            
             return;
         }
         
@@ -41,10 +45,12 @@ public class LevelManager : MonoBehaviour
     private void CleanSingletons()
     {
         FieldGenerator.Instance?.Clean();
+        EnemySpawner.Instance?.Clean();
     }
 
     public void LoadLevel(int levelId)
     {
+        currentLevel = levelId;
         var somethingUnloaded = false;
         
         for (var i = 0; i < SceneManager.sceneCount; i++)
@@ -66,5 +72,18 @@ public class LevelManager : MonoBehaviour
             CleanSingletons();
             SceneManager.LoadSceneAsync($"Level{levelId}", LoadSceneMode.Additive);
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        var nextLevel = currentLevel + 1;
+        
+        if (!Application.CanStreamedLevelBeLoaded($"Level{nextLevel}"))
+        {
+            Debug.Log("Finished the game");
+            return;
+        }
+
+        LoadLevel(nextLevel);
     }
 }

@@ -24,7 +24,7 @@ namespace Enemies
             TargetNextField();
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (currentField.tower)
             {

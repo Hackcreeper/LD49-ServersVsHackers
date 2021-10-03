@@ -1314,6 +1314,7 @@ MonoBehaviour:
   defaultTowers:
   - {fileID: 11400000, guid: 730b561d831a94f4c8f290fe28c79b27, type: 2}
   - {fileID: 11400000, guid: 68d77812f12734ee09cf2869ad40bc71, type: 2}
+  - {fileID: 11400000, guid: 7381257c4f3554439bcad17d83eacc8f, type: 2}
 --- !u!4 &1775308605
 Transform:
   m_ObjectHideFlags: 0

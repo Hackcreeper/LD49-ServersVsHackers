@@ -128,7 +128,7 @@ namespace Towers
         {
             var position = f.transform.position;
 
-            var offset = f.GetTower() is UsbSlot ? 0.15f : 0.5f;
+            var offset = (f.GetTower() is UsbSlot && this.requiresUsb) ? 0.15f : 0.5f;
             
             transform.position = new Vector3(
                 position.x,

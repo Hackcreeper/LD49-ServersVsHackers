@@ -6,24 +6,26 @@ namespace Towers
     {
         public Material corruptedMaterial;
         public bool corrupted;
-
-        private MeshRenderer[] _meshRenderers;
+        public MeshRenderer errorMeshRenderer;
+        public int lightMaterialId;
 
         protected override void Awake()
         {
             base.Awake();
-            
-            _meshRenderers = GetComponentsInChildren<MeshRenderer>();
         }
 
         public void Corrupt()
         {
             corrupted = true;
+
+            var materials = errorMeshRenderer.materials;
+            materials[lightMaterialId] = corruptedMaterial;
+            errorMeshRenderer.materials = materials;
             
-            foreach (var meshRenderer in _meshRenderers)
-            {
-                meshRenderer.material = corruptedMaterial;
-            }
+            // foreach (var meshRenderer in _meshRenderers)
+            // {
+            //     meshRenderer.material = corruptedMaterial;
+            // }
 
             FieldGenerator.Instance.CompromiseRow(row);
         }

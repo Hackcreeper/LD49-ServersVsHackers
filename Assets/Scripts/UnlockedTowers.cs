@@ -12,8 +12,16 @@ public class UnlockedTowers : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         Instance = this;
         _towers.AddRange(defaultTowers);
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     public TowerData[] GetAllTowers() => _towers.ToArray();

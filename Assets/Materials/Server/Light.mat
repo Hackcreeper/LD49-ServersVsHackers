@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Server_Corrupt
+  m_Name: Light
   m_Shader: {fileID: -6465566751694194690, guid: 5f597ed3ecc3043748d1c63b81831bb8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -15,11 +15,26 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - SHADOWCASTER
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_54582b59b8fc4a728719025795125c33:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_5c794749c7e9466b9fc41f302b6abcda:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_c8387100f46647b99f056162130f3c00:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_e8fb963381e940dba125536afed0ce3d:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -86,7 +101,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -99,19 +114,19 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
-    - _Surface: 1
+    - _SrcBlend: 1
+    - _Surface: 0
     - _WorkflowMode: 1
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
-    - Color_0d7065f50d6946b8bf1b54e5edff5174: {r: 2.9960785, g: 0.29803923, b: 0.29803923, a: 0}
-    - Color_db87b78237a94b44811165f11d62c9e4: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.9150943, g: 0, b: 0.0344198, a: 1}
+    - Color_0d7065f50d6946b8bf1b54e5edff5174: {r: 0, g: 42.722507, b: 0.16753925, a: 0}
+    - Color_db87b78237a94b44811165f11d62c9e4: {r: 0.031327765, g: 0.6981132, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &6164194440584553708
+--- !u!114 &6668094305404547819
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

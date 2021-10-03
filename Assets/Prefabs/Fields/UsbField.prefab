@@ -1,22 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2124000082350646822
+--- !u!114 &9049779826179571324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649360330808241549}
+  m_GameObject: {fileID: 6378959686453414158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63a16a3b88624051aa37ca3f33f0e5d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 87a6e7b0265c46cd9398d255f7400490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
   column: 0
   tower: {fileID: 0}
-  serverPrefab: {fileID: 720131632003814078, guid: b3621a2d0b3d44e8fa044f3689b22c20, type: 3}
---- !u!1001 &4267372536292990150
+  defaultMaterial: {fileID: 2100000, guid: 109d22e59fc5f424699f0f4c142b87db, type: 2}
+  hoverErrorMaterial: {fileID: 2100000, guid: a2902ded2e62d4ebf9a2d53a5b9be6fa, type: 2}
+  hoverOkMaterial: {fileID: 2100000, guid: 2a6632a9698a744259c174496f323860, type: 2}
+  usbPrefab: {fileID: 720131632003814078, guid: 8cd6634630d1f417182ca45e825db6c3, type: 3}
+--- !u!1001 &5844404980104935493
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -25,7 +28,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 692957672491348299, guid: 357d4a98f748942339c669e2fa6925f0, type: 3}
       propertyPath: m_Name
-      value: ServerField
+      value: UsbField
       objectReference: {fileID: 0}
     - target: {fileID: 692957672491348343, guid: 357d4a98f748942339c669e2fa6925f0, type: 3}
       propertyPath: m_RootOrder
@@ -74,8 +77,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 692957672491348336, guid: 357d4a98f748942339c669e2fa6925f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 357d4a98f748942339c669e2fa6925f0, type: 3}
---- !u!1 &3649360330808241549 stripped
+--- !u!1 &6378959686453414158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 692957672491348299, guid: 357d4a98f748942339c669e2fa6925f0, type: 3}
-  m_PrefabInstance: {fileID: 4267372536292990150}
+  m_PrefabInstance: {fileID: 5844404980104935493}
   m_PrefabAsset: {fileID: 0}

@@ -76,6 +76,8 @@ namespace Towers
             OnHand = null;
             
             OnPlace();
+            
+            transform.SetParent(f.transform);
         }
 
         private void PlaceBlueprint()
@@ -96,6 +98,8 @@ namespace Towers
 
             OnHand = null;
             OnPlace();
+            
+            transform.SetParent(PlaceableField.ActiveField.transform);
         }
         
         #endregion

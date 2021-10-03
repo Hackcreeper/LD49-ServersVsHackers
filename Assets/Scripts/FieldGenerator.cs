@@ -9,9 +9,11 @@ public class FieldGenerator : MonoBehaviour
     public GameObject placeableFieldPrefab;
     public GameObject enemySpawnFieldPrefab;
     public GameObject serverFieldPrefab;
+    public GameObject usbFieldPrefab;
 
     public int rows = 5;
     public int columns = 9;
+    public bool firstColumnUsbSlots;
 
     private Dictionary<int, List<Field>> _rows = new Dictionary<int, List<Field>>();
 
@@ -30,7 +32,9 @@ public class FieldGenerator : MonoBehaviour
 
             for (var x = 1; x < columns + 1; x++)
             {
-                _rows[y].Add(CreateField(placeableFieldPrefab, x, y));
+                var prefab = firstColumnUsbSlots && x == 1 ? usbFieldPrefab : placeableFieldPrefab;
+                
+                _rows[y].Add(CreateField(prefab, x, y));
             }
 
             _rows[y].Add(CreateField(enemySpawnFieldPrefab, columns + 1, y));

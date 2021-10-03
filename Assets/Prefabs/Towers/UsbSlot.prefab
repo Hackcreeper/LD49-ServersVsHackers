@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 720131632003814078}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.6875, z: 0.5}
+  m_LocalScale: {x: 0.35, y: 0.48125, z: 0.35}
   m_Children:
   - {fileID: 6824764048520638441}
   m_Father: {fileID: 0}
@@ -74,6 +74,8 @@ MonoBehaviour:
   health: 5
   canTakeDamage: 1
   data: {fileID: 0}
+  requiresUsb: 0
+  pluggedTower: {fileID: 0}
 --- !u!1001 &6430251601793943554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f794a6adfd7e54d84b889603329f55ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f794a6adfd7e54d84b889603329f55ca, type: 3}
       propertyPath: m_LocalPosition.z

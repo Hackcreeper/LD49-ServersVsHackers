@@ -92,4 +92,12 @@ public class FieldGenerator : MonoBehaviour
     {
         Instance = null;
     }
+
+    public void CompromiseRow(int row)
+    {
+        foreach (var field in _rows[row])
+        {
+            field.Compromise();
+        }
+    }
 }

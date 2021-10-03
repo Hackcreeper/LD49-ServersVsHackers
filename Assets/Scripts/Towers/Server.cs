@@ -24,6 +24,8 @@ namespace Towers
             {
                 meshRenderer.material = corruptedMaterial;
             }
+
+            FieldGenerator.Instance.CompromiseRow(row);
         }
 
         protected override void OnPlace()

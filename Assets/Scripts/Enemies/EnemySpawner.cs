@@ -28,7 +28,9 @@ namespace Enemies
         {
             for (var i = 0; i < amount; i++)
             {
-                var spawner = _spawnFields[Random.Range(0, _spawnFields.Count)];
+                var possibleFields = _spawnFields.Where(field => !field.compromised).ToArray();
+                
+                var spawner = possibleFields[Random.Range(0, possibleFields.Length)];
                 var position = spawner.transform.position;
 
                 var enemy = Instantiate(

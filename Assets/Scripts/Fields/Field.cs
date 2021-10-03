@@ -9,6 +9,8 @@ namespace Fields
         public int row;
         public int column;
         public Tower tower;
+        public bool compromised;
+        public Material compromisedMaterial;
 
         protected MeshRenderer MeshRenderer;
 
@@ -26,7 +28,7 @@ namespace Fields
         public virtual void OnEnemyEnter(Enemy enemy)
         {
         }
-        
+
         public virtual void OnProjectileEnter(Projectile projectile)
         {
         }
@@ -37,8 +39,14 @@ namespace Fields
             {
                 return slot.GetTower();
             }
-            
+
             return tower;
+        }
+
+        public void Compromise()
+        {
+            GetComponent<MeshRenderer>().material = compromisedMaterial;
+            compromised = true;
         }
     }
 }

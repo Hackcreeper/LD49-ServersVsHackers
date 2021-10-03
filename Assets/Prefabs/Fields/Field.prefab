@@ -110,7 +110,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   row: 0
   column: 0
+  tower: {fileID: 0}
+  compromised: 0
+  compromisedMaterial: {fileID: 2100000, guid: 7c9bb4c60c137429bb42d34a3c39758b, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 109d22e59fc5f424699f0f4c142b87db, type: 2}
   hoverErrorMaterial: {fileID: 2100000, guid: a2902ded2e62d4ebf9a2d53a5b9be6fa, type: 2}
   hoverOkMaterial: {fileID: 2100000, guid: 2a6632a9698a744259c174496f323860, type: 2}
-  tower: {fileID: 0}

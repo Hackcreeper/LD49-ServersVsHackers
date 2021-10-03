@@ -109,3 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
+  column: 0
+  tower: {fileID: 0}
+  compromised: 0
+  compromisedMaterial: {fileID: 2100000, guid: 7c9bb4c60c137429bb42d34a3c39758b, type: 2}

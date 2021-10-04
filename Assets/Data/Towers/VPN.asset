@@ -15,4 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 720131632003814078, guid: 47755fdb4ec35422595d7c293c0d93c8, type: 3}
   title: VPN Tunnel
   price: 100
-  renderShot: {fileID: 21300000, guid: db9b7a314103d47fab1e84fc1b76a45e, type: 3}
+  renderShot: {fileID: 21300000, guid: 0b5f848199273477b8a570df3a975b4c, type: 3}

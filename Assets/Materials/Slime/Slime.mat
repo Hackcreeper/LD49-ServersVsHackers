@@ -10,7 +10,7 @@ Material:
   m_Name: Slime
   m_Shader: {fileID: -6465566751694194690, guid: f24fbcdff9e7d4103ad01529183374f1, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -80,9 +80,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_32103e14ad59488abcfa90e817c1774e: 0.9
+    - Vector1_32103e14ad59488abcfa90e817c1774e: 3.2
     - Vector1_d39066332da945c0a1bd289e52b24327: 1
-    - Vector1_f59d7551584645e8abf93fd3b9e38354: 3
+    - Vector1_f59d7551584645e8abf93fd3b9e38354: 2.56
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

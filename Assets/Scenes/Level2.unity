@@ -190,7 +190,7 @@ MonoBehaviour:
   startCoins: 500
   plannedEnemies:
   - time: 2
-    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: 3ddf42c3caad648c498c97e3716187cf, type: 3}
     amount: 1
   - time: 10
     enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}

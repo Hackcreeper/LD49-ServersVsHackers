@@ -125,4 +125,19 @@ public class FieldGenerator : MonoBehaviour
 
         return _rows.Count - corrupted;
     }
+
+    public Field GetFreeField()
+    {
+        var raw = _rows.Values;
+        var emptyFields = new List<Field>();
+        
+        foreach (var row in raw)
+        {
+            emptyFields.AddRange(
+                row.Where(field => !field.GetTower()).Where(field => !field.compromised)
+            );
+        }
+
+        return emptyFields[Random.Range(0, emptyFields.Count)];
+    }
 }

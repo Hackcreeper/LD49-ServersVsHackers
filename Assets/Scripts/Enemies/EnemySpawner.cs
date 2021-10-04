@@ -93,5 +93,19 @@ namespace Enemies
         {
             return _enemies.Values.Sum(list => list.Count);
         }
+
+        public void MoveEnemyInOtherRow(Enemy enemy, int newRow)
+        {
+            _enemies[enemy.row].Remove(enemy);
+            
+            if (!_enemies.ContainsKey(newRow))
+            {
+                _enemies.Add(newRow, new List<Enemy>());
+            }
+            
+            _enemies[newRow].Add(enemy);
+
+            enemy.row = newRow;
+        }
     }
 }

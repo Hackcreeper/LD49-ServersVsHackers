@@ -1,5 +1,6 @@
 using System.Collections;
 using Enemies;
+using Fields;
 using UnityEngine;
 
 namespace Towers
@@ -77,11 +78,11 @@ namespace Towers
             }
 
             // Spawn new hole on the first row (use given mesh instance)
-            var lastFieldInRow = FieldGenerator.Instance.GetLastFieldInRow(row);
-            lastFieldInRow.GetComponent<MeshFilter>().mesh = holeFieldMesh;
+            var targetField = GetTargetField();
+            targetField.GetComponent<MeshFilter>().mesh = holeFieldMesh;
 
             // Suck out the enemy (little jump maybe? size up again)
-            enemyTransform.position = lastFieldInRow.transform.position - new Vector3(0, 1f, 0);
+            enemyTransform.position = targetField.transform.position - new Vector3(0, 1f, 0);
 
             timer = 0f;
             originalPosition = enemyTransform.position;
@@ -105,7 +106,7 @@ namespace Towers
             }
 
             // Remove hole (before enemy hits bottom)
-            lastFieldInRow.GetComponent<MeshFilter>().mesh = defaultFieldMesh;
+            targetField.GetComponent<MeshFilter>().mesh = defaultFieldMesh;
 
             // Enemy should fall down
             timer = 0f;
@@ -116,7 +117,7 @@ namespace Towers
 
                 enemyTransform.position = Vector3.Lerp(
                     originalPosition,
-                    lastFieldInRow.transform.position + new Vector3(0, .5f, 0),
+                    targetField.transform.position + new Vector3(0, .5f, 0),
                     timer
                 );
 
@@ -124,17 +125,24 @@ namespace Towers
             }
 
             // set fields:
-            enemy.currentField = FieldGenerator.Instance.GetLastFieldInRow(row);
+            enemy.currentField = targetField;
             enemy.SetTargetWithStartPosition(
-                FieldGenerator.Instance.GetPreviousFieldInRow(row, enemy.currentField),
+                FieldGenerator.Instance.GetPreviousFieldInRow(targetField.row, enemy.currentField),
                 enemy.GetRealPositionOfField(enemy.currentField),
                 0.5f
             );
+            
+            EnemySpawner.Instance.MoveEnemyInOtherRow(enemy, targetField.row);
 
             // Unlock enemy
             enemy.Unlock();
         }
 
+        protected virtual Field GetTargetField()
+        {
+            return FieldGenerator.Instance.GetLastFieldInRow(row);
+        }
+        
         private void OnDestroy()
         {
             if (field)

@@ -36,12 +36,10 @@ namespace Fields
 
             if (tower && tower is UsbSlot slot)
             {
-                Debug.Log("Slotty");
                 slot.pluggedTower = t;
             }
             else
             {
-                Debug.Log("no slotty");
                 tower = t;
             }
             

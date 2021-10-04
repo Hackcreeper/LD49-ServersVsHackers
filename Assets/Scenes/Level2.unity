@@ -207,6 +207,7 @@ MonoBehaviour:
   - time: 31
     enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 2
+  unlock: {fileID: 11400000, guid: a1cededdc3e33401cbd1009521304c62, type: 2}
 --- !u!114 &1730954315
 MonoBehaviour:
   m_ObjectHideFlags: 0

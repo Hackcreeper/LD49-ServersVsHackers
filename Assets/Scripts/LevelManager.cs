@@ -1,3 +1,4 @@
+using System.Collections;
 using Enemies;
 using Towers;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class LevelManager : MonoBehaviour
     
     private int? _sceneToBeLoaded = null;
     private int currentLevel;
+    private Vector2 startPosition = Vector2.zero;
 
     private void Awake()
     {
@@ -61,29 +63,49 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void LoadLevel(int levelId)
+    public void LoadLevel(int levelId, bool restarting = false)
     {
-        currentLevel = levelId;
-        var somethingUnloaded = false;
+        if (levelId > 1 && !restarting)
+        {
+            startPosition += new Vector2(45, 45);
+        }
         
+        currentLevel = levelId;
+        
+        CleanSingletons();
+        if (restarting)
+        {
+            RemoveAllLevels();
+        }
+        
+        SceneManager.LoadSceneAsync($"Level{levelId}", LoadSceneMode.Additive);
+
+        StartCoroutine(RemoveOldLevels());
+    }
+
+    private IEnumerator RemoveOldLevels()
+    {
+        yield return new WaitForSeconds(2);
+
+        for (var i = 0; i < SceneManager.sceneCount; i++)
+        {
+            var scene = SceneManager.GetSceneAt(i);
+            if (scene.name.Contains("Level") && scene.name != $"Level{currentLevel}")
+            {
+                SceneManager.UnloadSceneAsync(scene);
+            }
+        }
+    }
+
+    private void RemoveAllLevels()
+    {
         for (var i = 0; i < SceneManager.sceneCount; i++)
         {
             var scene = SceneManager.GetSceneAt(i);
             if (scene.name.Contains("Level"))
             {
-                somethingUnloaded = true;
-                SceneManager.UnloadSceneAsync(scene).completed += delegate(AsyncOperation operation)
-                {
-                    CleanSingletons();
-                    SceneManager.LoadSceneAsync($"Level{levelId}", LoadSceneMode.Additive);
-                };
+                SceneManager.UnloadSceneAsync(scene);
             }
-        }
-
-        if (!somethingUnloaded)
-        {
-            CleanSingletons();
-            SceneManager.LoadSceneAsync($"Level{levelId}", LoadSceneMode.Additive);
         }
     }
 
@@ -102,8 +124,10 @@ public class LevelManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        LoadLevel(currentLevel);
+        LoadLevel(currentLevel, true);
     }
 
     public int GetCurrentLevel() => currentLevel;
+
+    public Vector2 GetStartPosition() => startPosition;
 }

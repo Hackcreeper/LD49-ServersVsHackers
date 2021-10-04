@@ -17,6 +17,7 @@ namespace Towers
         public bool requiresUsb;
 
         private Camera _camera;
+        private bool _onCurrentLevel = true;
 
         #region UNITY
 
@@ -32,6 +33,11 @@ namespace Towers
         
         private void Update()
         {
+            if (!_onCurrentLevel)
+            {
+                return;
+            }
+            
             if (blueprint)
             {
                 UpdateBlueprint();
@@ -162,6 +168,15 @@ namespace Towers
             }
             
             Destroy(gameObject);
+        }
+        
+        #endregion
+        
+        #region GENERAL
+
+        public void NewLevelLoaded()
+        {
+            _onCurrentLevel = false;
         }
         
         #endregion

@@ -10,11 +10,13 @@ namespace Towers
         {
             base.Shoot();
             
-            Instantiate(
+            var projectile = Instantiate(
                 projectilePrefab,
                 projectileSpawn2.position,
                 Quaternion.identity
             );
+            
+            projectile.transform.SetParent(field.transform.parent);
         }
     }
 }

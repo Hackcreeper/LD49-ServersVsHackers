@@ -60,11 +60,13 @@ namespace Towers
 
         protected virtual void Shoot()
         {
-            Instantiate(
+            var projectile = Instantiate(
                 projectilePrefab,
                 projectileSpawn.position,
                 Quaternion.identity
             );
+            
+            projectile.transform.SetParent(field.transform.parent);
         }
     }
 }

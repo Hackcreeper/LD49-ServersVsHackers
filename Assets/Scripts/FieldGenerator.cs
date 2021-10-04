@@ -91,6 +91,11 @@ public class FieldGenerator : MonoBehaviour
     public void Clean()
     {
         Instance = null;
+
+        foreach (var row in _rows.Values)
+        {
+            row.ForEach(field => field.tower?.NewLevelLoaded());
+        }
     }
 
     public void CompromiseRow(int row)

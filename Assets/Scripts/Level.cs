@@ -18,8 +18,21 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
+        var startPosition = LevelManager.Instance.GetStartPosition();
+        transform.position = new Vector3(
+            startPosition.x,
+            0,
+            startPosition.y
+        );
+
+        CameraMover.Instance.MoveTo(new Vector3(
+            startPosition.x,
+            5.42f,
+            startPosition.y - 6.35f
+        ));
+
         TowerButtons.Instance.Rerender();
-        
+
         _planned.AddRange(plannedEnemies);
         _planned.Sort((a, b) => a.time - b.time);
 
@@ -34,14 +47,14 @@ public class Level : MonoBehaviour
         {
             return;
         }
-        
+
         if (_lastSpawned + 1 >= _planned.Count)
         {
             CheckForWin();
-            
+
             return;
         }
-        
+
         _timer += Time.deltaTime;
 
         if (_timer > _planned[_lastSpawned + 1].time)
@@ -59,7 +72,7 @@ public class Level : MonoBehaviour
         }
 
         _state = LevelState.Finished;
-        
+
         Congratulations.Instance.Show(unlock);
         UnlockedTowers.Instance.AddTower(unlock);
     }
@@ -71,7 +84,7 @@ public class Level : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         _state = LevelState.Running;
-        
+
         Banner.Instance.HideIntroBanner();
     }
 

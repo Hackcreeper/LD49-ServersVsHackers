@@ -85,8 +85,15 @@ public class Level : MonoBehaviour
 
         _state = LevelState.Finished;
 
-        Congratulations.Instance.Show(unlock);
-        UnlockedTowers.Instance.AddTower(unlock);
+        if (LevelManager.Instance.GetCurrentLevel() == 10)
+        {
+            Congratulations.Instance.Win();
+        }
+        else
+        {
+            Congratulations.Instance.Show(unlock);
+            UnlockedTowers.Instance.AddTower(unlock);   
+        }
     }
     
     private enum LevelState

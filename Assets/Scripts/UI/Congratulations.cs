@@ -1,6 +1,7 @@
 using TMPro;
 using Towers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
@@ -16,11 +17,21 @@ namespace UI
         public Image nextButton;
         public AudioClip niceSound;
 
+        public GameObject winPanel;
+        public Image winMenuButton;
+        
         private void Awake()
         {
             Instance = this;
         }
 
+        public void Win()
+        {
+            Audio.Instance.Play(niceSound);
+            
+            winPanel.SetActive(true);
+        }
+        
         public void Show(TowerData data)
         {
             Audio.Instance.Play(niceSound);
@@ -42,10 +53,25 @@ namespace UI
             nextButton.color = Color.white;
         }
 
+        public void OnWinMenuHover()
+        {
+            winMenuButton.color = new Color(0.89960784f, 0.89960784f, 0.89960784f);
+        }
+        
+        public void OnWinMenuLeave()
+        {
+            winMenuButton.color = Color.white;
+        }
+        
         public void OnClick()
         {
             panel.SetActive(false);
             LevelManager.Instance.LoadNextLevel();
+        }
+
+        public void BackToMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace UI
         public TextMeshProUGUI towerPrice;
         public Image towerPreview;
         public Image nextButton;
+        public AudioClip niceSound;
 
         private void Awake()
         {
@@ -22,6 +23,8 @@ namespace UI
 
         public void Show(TowerData data)
         {
+            Audio.Instance.Play(niceSound);
+            
             towerName.text = data.title;
             towerPrice.text = data.price.ToString();
             towerPreview.sprite = data.renderShot;

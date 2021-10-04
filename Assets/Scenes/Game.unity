@@ -4569,6 +4569,8 @@ GameObject:
   - component: {fileID: 1848157704}
   - component: {fileID: 1848157705}
   - component: {fileID: 1848157706}
+  - component: {fileID: 1848157708}
+  - component: {fileID: 1848157707}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -4634,6 +4636,7 @@ MonoBehaviour:
   towerPrice: {fileID: 1594446498}
   towerPreview: {fileID: 1732694168}
   nextButton: {fileID: 683622527}
+  niceSound: {fileID: 8300000, guid: 683b716189534458aa6e84f0519a7230, type: 3}
 --- !u!114 &1848157706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4649,6 +4652,115 @@ MonoBehaviour:
   panel: {fileID: 975507480}
   buttonRetry: {fileID: 1934341077}
   buttonMenu: {fileID: 1185710688}
+  gameOverClip: {fileID: 8300000, guid: a35e896301bf7451e8edba3fc19f0bd5, type: 3}
+--- !u!114 &1848157707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848157701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a29e0cdd2642a1b68427ba0d91cd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1848157708
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848157701}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1852913798
 GameObject:
   m_ObjectHideFlags: 0
@@ -5364,10 +5476,10 @@ PrefabInstance:
     - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
       propertyPath: defaultTowers.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: a1cededdc3e33401cbd1009521304c62, type: 2}
+      objectReference: {fileID: 11400000, guid: da8a5d6baefd04342814348eba233bca, type: 2}
     - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
       propertyPath: defaultTowers.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: a49b89c609c78408eabbfa63d8d16b09, type: 2}
+      objectReference: {fileID: 11400000, guid: 5f1f4a1ff418d4dbf92c684664b2d69b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0497b4597243e46218ce754a04914a1b, type: 3}

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 5f;
+    public AudioClip[] hitSounds;
     
     private void Update()
     {
@@ -18,6 +19,7 @@ public class Projectile : MonoBehaviour
             return;
         }
         
+        Audio.Instance.Play(hitSounds[Random.Range(0, hitSounds.Length)]);
         enemy.TakeDamage();
         Destroy(gameObject);
     }

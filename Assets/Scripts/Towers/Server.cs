@@ -16,6 +16,11 @@ namespace Towers
 
         public void Corrupt()
         {
+            if (!corrupted)
+            {
+                Audio.Instance.Play(dieSound);
+            }
+            
             corrupted = true;
 
             var materials = errorMeshRenderer.materials;

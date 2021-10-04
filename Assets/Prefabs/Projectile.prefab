@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  hitSounds:
+  - {fileID: 8300000, guid: dbc128758af5d4ea686e72669baaab01, type: 3}
+  - {fileID: 8300000, guid: bc176284827504c7f8886747049293d9, type: 3}
+  - {fileID: 8300000, guid: 8a92fd0223af64b5fa6fad76c9882b1c, type: 3}
 --- !u!54 &-4801670385721652656
 Rigidbody:
   m_ObjectHideFlags: 0

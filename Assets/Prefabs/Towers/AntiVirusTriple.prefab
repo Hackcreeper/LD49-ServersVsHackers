@@ -79,9 +79,15 @@ MonoBehaviour:
   canTakeDamage: 1
   data: {fileID: 0}
   requiresUsb: 0
+  walkable: 0
+  dieSound: {fileID: 0}
   cooldown: 2
   projectilePrefab: {fileID: 8494332106282051341, guid: c49985b40e94045cdb8a9e4737a6e44e, type: 3}
   projectileSpawn: {fileID: 8402690360130878899}
+  shootSounds:
+  - {fileID: 8300000, guid: 5845237f6ae234c57aa8233741623894, type: 3}
+  - {fileID: 8300000, guid: 1f9275519a97541f690ab3f41d304b1f, type: 3}
+  - {fileID: 8300000, guid: 0f0b480de47ce4f8fa053ee1a997688f, type: 3}
   projectileSpawn2: {fileID: 6958915397059353183}
   projectileSpawn3: {fileID: 853804479864540231}
 --- !u!95 &3527276534866591968

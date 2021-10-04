@@ -8,6 +8,7 @@ namespace Towers
         public float cooldown = 2;
         public GameObject projectilePrefab;
         public Transform projectileSpawn;
+        public AudioClip[] shootSounds;
 
         private float _timer;
         private bool _active;
@@ -60,6 +61,8 @@ namespace Towers
 
         protected virtual void Shoot()
         {
+            Audio.Instance.Play(shootSounds[Random.Range(0, shootSounds.Length)]);
+            
             var projectile = Instantiate(
                 projectilePrefab,
                 projectileSpawn.position,

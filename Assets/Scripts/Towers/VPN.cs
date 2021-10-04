@@ -14,6 +14,7 @@ namespace Towers
         public Material defaultMaterial;
         public Material cooldownMaterial;
         public MeshRenderer meshRenderer;
+        public AudioClip suckSound;
 
         private float _timer;
         
@@ -43,6 +44,8 @@ namespace Towers
 
             _timer = cooldown;
             meshRenderer.material = cooldownMaterial;
+
+            Audio.Instance.Play(suckSound);
             
             StartCoroutine(Suck(enemy));
         }
@@ -142,9 +145,11 @@ namespace Towers
         {
             return FieldGenerator.Instance.GetLastFieldInRow(row);
         }
-        
-        private void OnDestroy()
+
+        protected override void OnDestroy()
         {
+            base.OnDestroy();
+            
             if (field)
             {
                 field.GetComponent<MeshFilter>().mesh = defaultFieldMesh;

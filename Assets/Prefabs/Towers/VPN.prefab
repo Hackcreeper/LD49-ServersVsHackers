@@ -76,6 +76,7 @@ MonoBehaviour:
   data: {fileID: 0}
   requiresUsb: 0
   walkable: 1
+  dieSound: {fileID: 0}
   defaultFieldMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   holeFieldMesh: {fileID: -5495902117074765545, guid: c5caa7467d6394964b56a34f30ac3806, type: 3}
   suckSpeed: 1
@@ -83,6 +84,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 99d37cece7c5f47ccb2ab53f2f2b76ce, type: 2}
   cooldownMaterial: {fileID: 2100000, guid: 19dc379c100374a90947e1c691775bbc, type: 2}
   meshRenderer: {fileID: 7976881815926299711}
+  suckSound: {fileID: 8300000, guid: 5f401825b5154428f9aa6da4bbfa9c59, type: 3}
 --- !u!1001 &8751063753449914555
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using Enemies;
 using Fields;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace Towers
         public TowerData data;
         public bool requiresUsb;
         public bool walkable;
+        public AudioClip dieSound;
 
         private Camera _camera;
         private bool _onCurrentLevel = true;
@@ -47,6 +49,14 @@ namespace Towers
             }
             
             OnUpdate();
+        }
+
+        protected virtual void OnDestroy()
+        {
+            if (dieSound != null)
+            {
+                Audio.Instance.Play(dieSound);
+            }
         }
 
         #endregion

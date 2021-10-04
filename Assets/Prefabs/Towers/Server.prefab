@@ -66,6 +66,8 @@ MonoBehaviour:
   canTakeDamage: 0
   data: {fileID: 0}
   requiresUsb: 0
+  walkable: 0
+  dieSound: {fileID: 8300000, guid: 32375fc823a204bc4a086a697890d2d3, type: 3}
   corruptedMaterial: {fileID: 2100000, guid: 86b1df26e2654480abf6532edaad466d, type: 2}
   corrupted: 0
   errorMeshRenderer: {fileID: 8260647026419384564}

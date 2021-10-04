@@ -11,6 +11,7 @@ namespace UI
         public GameObject panel;
         public Image buttonRetry;
         public Image buttonMenu;
+        public AudioClip gameOverClip;
         
         private void Awake()
         {
@@ -20,6 +21,7 @@ namespace UI
         public void Show()
         {
             panel.SetActive(true);
+            Audio.Instance.Play(gameOverClip);
         }
         
         public void Retry()

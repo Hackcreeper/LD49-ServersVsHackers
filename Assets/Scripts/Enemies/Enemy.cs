@@ -9,6 +9,7 @@ namespace Enemies
         public float attackCooldown = 1;
         public int row;
         public int health = 3;
+        public AudioClip dieSound;
 
         private float _timer;
         private float _attackTimer;
@@ -127,6 +128,11 @@ namespace Enemies
 
         protected virtual void Die()
         {
+            if (dieSound != null)
+            {
+                Audio.Instance.Play(dieSound);
+            }
+            
             EnemySpawner.Instance.KillEnemy(this);
         }
         

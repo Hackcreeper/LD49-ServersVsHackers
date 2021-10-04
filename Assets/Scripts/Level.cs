@@ -51,7 +51,7 @@ public class Level : MonoBehaviour
 
         if (FieldGenerator.Instance.AliveServers() < requiredServersAlive)
         {
-            GameOver();
+            EndGame();
             return;
         }
         
@@ -71,11 +71,10 @@ public class Level : MonoBehaviour
         }
     }
 
-    private void GameOver()
+    private void EndGame()
     {
-        Debug.Log("Game Over!");
-        
         _state = LevelState.Failed;
+        GameOver.Instance.Show();
     }
 
     private void CheckForWin()

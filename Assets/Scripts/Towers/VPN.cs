@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Towers
@@ -15,6 +16,14 @@ namespace Towers
         protected override void OnUpdate()
         {
             
+        }
+
+        private void OnDestroy()
+        {
+            if (field)
+            {
+                field.GetComponent<MeshFilter>().mesh = defaultFieldMesh;
+            }
         }
     }
 }

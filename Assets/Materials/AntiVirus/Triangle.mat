@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _Cross
+  m_Name: Triangle
   m_Shader: {fileID: -6465566751694194690, guid: 5f597ed3ecc3043748d1c63b81831bb8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,19 +20,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_54582b59b8fc4a728719025795125c33:
-        m_Texture: {fileID: 2800000, guid: 2b068ddd8ec614835865aea8bcdffbd7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3366176b1806b464ca7b29d5a41832a9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5c794749c7e9466b9fc41f302b6abcda:
-        m_Texture: {fileID: 2800000, guid: 90fa3d1a10be74447adb0d5ab04c1684, type: 3}
+        m_Texture: {fileID: 2800000, guid: ef7cd3a0b39fb46bcaacefbb3ebc53cd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_c8387100f46647b99f056162130f3c00:
-        m_Texture: {fileID: 2800000, guid: 315f31e7cfdc1415f8d95a96bf110216, type: 3}
+        m_Texture: {fileID: 2800000, guid: 25c38f7536438440b858d9b73beefa5d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_e8fb963381e940dba125536afed0ce3d:
-        m_Texture: {fileID: 2800000, guid: a3a22a92a485e448abc5f8e5b4394cf1, type: 3}
+        m_Texture: {fileID: 2800000, guid: b1d04d1bda5ed484189f3148f1b6447a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -119,7 +119,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_0d7065f50d6946b8bf1b54e5edff5174: {r: 0, g: 24.02897, b: 58.239742, a: 1}
+    - Color_0d7065f50d6946b8bf1b54e5edff5174: {r: 0.8784314, g: 12.298039, b: 5.709804, a: 0}
     - Color_db87b78237a94b44811165f11d62c9e4: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

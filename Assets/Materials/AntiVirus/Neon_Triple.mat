@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _Rectangle
+  m_Name: Neon_Triple
   m_Shader: {fileID: -6465566751694194690, guid: 5f597ed3ecc3043748d1c63b81831bb8, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -20,19 +20,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_54582b59b8fc4a728719025795125c33:
-        m_Texture: {fileID: 2800000, guid: a0e1598b822054d9db2896b7e14d92d8, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5c794749c7e9466b9fc41f302b6abcda:
-        m_Texture: {fileID: 2800000, guid: fbbe6974ece8b4a8fab1a698de6b75c6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8bc203a4397654b0baa6f9274966e8db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_c8387100f46647b99f056162130f3c00:
-        m_Texture: {fileID: 2800000, guid: 7183cb153b27f4b49834f965b2862855, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4c41c637c097b4a91a3b3acf5560671a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_e8fb963381e940dba125536afed0ce3d:
-        m_Texture: {fileID: 2800000, guid: 95d7831e82fe44a1a8c7ba598b3706dc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 59270a4deb27445c2afc7d9f72e68e3e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -119,14 +119,14 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_0d7065f50d6946b8bf1b54e5edff5174: {r: 32, g: 4.5176473, b: 29.741177, a: 0}
+    - Color_0d7065f50d6946b8bf1b54e5edff5174: {r: 256, g: 43.790318, b: 0, a: 0}
     - Color_db87b78237a94b44811165f11d62c9e4: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1295257518527037958
+--- !u!114 &8855033500874164512
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

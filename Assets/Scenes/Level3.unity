@@ -190,22 +190,22 @@ MonoBehaviour:
   startCoins: 500
   plannedEnemies:
   - time: 2
-    enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 1
   - time: 10
-    enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 1
   - time: 18
-    enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 1
   - time: 21
-    enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 1
   - time: 28
-    enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 1
   - time: 31
-    enemyPrefab: {fileID: 4397266751934811028, guid: c2fb61e09f4284b0a8f667e9175abe55, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: ed9f38ff8103449d7a76c9a9de1d48e9, type: 3}
     amount: 2
 --- !u!114 &1730954315
 MonoBehaviour:

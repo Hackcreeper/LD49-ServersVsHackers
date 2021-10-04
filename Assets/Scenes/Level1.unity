@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1808f90b04bd4bb69f2fd7da285a2081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoins: 100
+  startCoins: 1000
   plannedEnemies:
   - time: 2
     enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}

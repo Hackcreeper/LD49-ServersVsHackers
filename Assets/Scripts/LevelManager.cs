@@ -1,5 +1,6 @@
 using System;
 using Enemies;
+using Towers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -54,6 +55,11 @@ public class LevelManager : MonoBehaviour
     {
         FieldGenerator.Instance?.Clean();
         EnemySpawner.Instance?.Clean();
+
+        if (Tower.OnHand)
+        {
+            Destroy(Tower.OnHand.gameObject);
+        }
     }
 
     public void LoadLevel(int levelId)

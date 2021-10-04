@@ -55,6 +55,11 @@ namespace Towers
             
             _timer = cooldown;
 
+            Shoot();
+        }
+
+        protected virtual void Shoot()
+        {
             Instantiate(
                 projectilePrefab,
                 projectileSpawn.position,

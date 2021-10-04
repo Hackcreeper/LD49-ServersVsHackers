@@ -62,7 +62,7 @@ MonoBehaviour:
   tileMoveSpeed: 2
   attackCooldown: 1
   row: 0
-  health: 3
+  health: 9
   dieSound: {fileID: 8300000, guid: f026480a4dfed4bb3b68c692fea9a72f, type: 3}
   currentField: {fileID: 0}
   targetField: {fileID: 0}

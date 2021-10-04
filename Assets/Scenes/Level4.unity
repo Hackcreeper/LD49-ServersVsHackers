@@ -195,19 +195,31 @@ MonoBehaviour:
   - time: 23
     enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}
     amount: 1
-  - time: 27
+  - time: 23
     enemyPrefab: {fileID: 4397266751934811028, guid: 9f43b59c80c1a49fda34fb1814262b68, type: 3}
     amount: 1
   - time: 37
     enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}
     amount: 1
-  - time: 46
+  - time: 39
     enemyPrefab: {fileID: 4397266751934811028, guid: 9f43b59c80c1a49fda34fb1814262b68, type: 3}
     amount: 1
   - time: 49
     enemyPrefab: {fileID: 4397266751934811028, guid: 9f43b59c80c1a49fda34fb1814262b68, type: 3}
     amount: 1
-  unlock: {fileID: 11400000, guid: a1cededdc3e33401cbd1009521304c62, type: 2}
+  - time: 49
+    enemyPrefab: {fileID: 4397266751934811028, guid: 3ddf42c3caad648c498c97e3716187cf, type: 3}
+    amount: 1
+  - time: 60
+    enemyPrefab: {fileID: 4397266751934811028, guid: 3ddf42c3caad648c498c97e3716187cf, type: 3}
+    amount: 1
+  - time: 70
+    enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}
+    amount: 1
+  - time: 70
+    enemyPrefab: {fileID: 4397266751934811028, guid: 3ddf42c3caad648c498c97e3716187cf, type: 3}
+    amount: 1
+  unlock: {fileID: 11400000, guid: a49b89c609c78408eabbfa63d8d16b09, type: 2}
   requiredServersAlive: 3
 --- !u!114 &1730954315
 MonoBehaviour:

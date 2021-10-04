@@ -78,10 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5baafa73c214aa0b728afcdda045e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileMoveSpeed: 2
-  attackCooldown: 1
+  tileMoveSpeed: 1.5
+  attackCooldown: 2
   row: 0
-  health: 3
+  health: 8
   dieSound: {fileID: 0}
   currentField: {fileID: 0}
   targetField: {fileID: 0}

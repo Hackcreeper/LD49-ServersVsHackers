@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 720131632003814078, guid: f12b9757f2f2c43c1be6cd349b58ca0d, type: 3}
   title: Triple Anti Virus
-  price: 100
+  price: 300
   renderShot: {fileID: 21300000, guid: 2a02432a7c9ac4fe182d7f9444028208, type: 3}

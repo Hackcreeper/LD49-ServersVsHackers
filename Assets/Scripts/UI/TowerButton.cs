@@ -31,6 +31,12 @@ namespace UI
             
             var instance = Instantiate(tower.prefab);
             instance.GetComponent<Tower>().data = tower;
+
+            var tutorial = FindObjectOfType<Tutorial>();
+            if (tutorial)
+            {
+                tutorial.TowerSelected();
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using Enemies;
 using Fields;
+using UI;
 using UnityEngine;
 
 namespace Towers
@@ -55,7 +56,7 @@ namespace Towers
         {
             if (dieSound != null)
             {
-                Audio.Instance.Play(dieSound);
+                Audio.Instance?.Play(dieSound);
             }
         }
 
@@ -105,7 +106,13 @@ namespace Towers
             {
                 return;
             }
-            
+
+            var tutorial = FindObjectOfType<Tutorial>();
+            if (tutorial)
+            {
+                tutorial.DisableTutorial();
+            }
+
             blueprint = false;
             AttachToActiveField();
             

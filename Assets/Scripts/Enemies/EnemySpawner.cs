@@ -42,6 +42,8 @@ namespace Enemies
                     ),
                     Quaternion.identity
                 );
+                
+                enemy.transform.SetParent(spawner.transform.parent);
 
                 var component = enemy.GetComponent<Enemy>();
                 component.row = spawner.row;

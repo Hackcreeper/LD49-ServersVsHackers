@@ -19,6 +19,14 @@ public class LevelManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.activeSceneChanged += (old, current) =>
+        {
+            if (current.name == "Game")
+            {
+                Start();
+            }
+        };
     }
 
     private void Start()
@@ -85,6 +93,11 @@ public class LevelManager : MonoBehaviour
         }
 
         LoadLevel(nextLevel);
+    }
+
+    public void RestartLevel()
+    {
+        LoadLevel(currentLevel);
     }
 
     public int GetCurrentLevel() => currentLevel;

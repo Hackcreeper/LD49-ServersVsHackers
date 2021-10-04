@@ -37,13 +37,13 @@ namespace UI
             transform.localScale = Vector3.Lerp(
                 transform.localScale,
                 _targetSize,
-                smoothFactor * Time.deltaTime
+                smoothFactor * Time.unscaledDeltaTime
             );
 
             _text.color = Color.Lerp(
                 _text.color,
                 _targetColor,
-                smoothFactor * Time.deltaTime
+                smoothFactor * Time.unscaledDeltaTime
             );
         }
     }

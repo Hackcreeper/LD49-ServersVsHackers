@@ -6000,7 +6000,7 @@ PrefabInstance:
     - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
       propertyPath: defaultTowers.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 69c232a3c7be54fe09294ca0653a0d77, type: 2}
+      objectReference: {fileID: 11400000, guid: da8a5d6baefd04342814348eba233bca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
 --- !u!1 &2113365599 stripped

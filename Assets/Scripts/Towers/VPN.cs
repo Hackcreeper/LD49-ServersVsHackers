@@ -15,6 +15,7 @@ namespace Towers
         public Material cooldownMaterial;
         public MeshRenderer meshRenderer;
         public AudioClip suckSound;
+        public bool active = true;
 
         private float _timer;
         
@@ -35,6 +36,11 @@ namespace Towers
 
         public override void OnWalkOver(Enemy enemy)
         {
+            if (!active)
+            {
+                return;
+            }
+
             base.OnWalkOver(enemy);
 
             if (_timer > 0f)

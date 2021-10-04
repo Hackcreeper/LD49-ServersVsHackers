@@ -66,7 +66,15 @@ namespace Fields
                 }
             }
 
-            Destroy(tower.gameObject);
+            if (tower is VPN vpn)
+            {
+                vpn.active = false;
+                vpn.meshRenderer.gameObject.SetActive(false);
+            }
+            else
+            {
+                Destroy(tower.gameObject);   
+            }
         }
     }
 }

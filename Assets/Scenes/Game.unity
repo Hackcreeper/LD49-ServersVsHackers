@@ -5474,6 +5474,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
+      propertyPath: defaultTowers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 68d77812f12734ee09cf2869ad40bc71, type: 2}
+    - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
       propertyPath: defaultTowers.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: da8a5d6baefd04342814348eba233bca, type: 2}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 720131632003814078, guid: 265cabe0d616f4488bee638d115102ec, type: 3}
   title: Coinminer
-  price: 20
+  price: 50
   renderShot: {fileID: 21300000, guid: 500071f83c4c743489e77667a588eed4, type: 3}

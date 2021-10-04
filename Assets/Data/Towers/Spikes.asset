@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 720131632003814078, guid: 8ff3639079634459c8fbcf1c5b9eb6d0, type: 3}
   title: Spikes
-  price: 20
+  price: 50
   renderShot: {fileID: 21300000, guid: 58f36dd1ae5b3430e81ef8f385fd2539, type: 3}

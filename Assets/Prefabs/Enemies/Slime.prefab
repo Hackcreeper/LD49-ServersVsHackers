@@ -61,10 +61,11 @@ MonoBehaviour:
   tileMoveSpeed: 2
   attackCooldown: 1
   row: 0
-  health: 3
+  health: 9
   currentField: {fileID: 0}
   targetField: {fileID: 0}
   animator: {fileID: 3855642771726269499}
+  lowerPrefab: {fileID: 0}
 --- !u!95 &3855642771726269499
 Animator:
   serializedVersion: 3

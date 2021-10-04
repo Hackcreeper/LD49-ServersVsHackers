@@ -113,10 +113,11 @@ MonoBehaviour:
   row: 0
   column: 0
   field: {fileID: 0}
-  health: 10
+  health: 8
   canTakeDamage: 1
   data: {fileID: 0}
   requiresUsb: 0
+  walkable: 0
 --- !u!1 &1167248671296112319
 GameObject:
   m_ObjectHideFlags: 0

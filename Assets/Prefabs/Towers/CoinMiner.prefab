@@ -76,8 +76,9 @@ MonoBehaviour:
   canTakeDamage: 1
   data: {fileID: 0}
   requiresUsb: 1
+  walkable: 0
   cooldown: 6
-  producing: 20
+  producing: 25
   particleEmit: 4
   particles: {fileID: 8865720459645499202}
 --- !u!1 &6408850470323870059

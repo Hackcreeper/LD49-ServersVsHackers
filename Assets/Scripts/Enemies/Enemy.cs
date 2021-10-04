@@ -121,7 +121,12 @@ namespace Enemies
             {
                 return;
             }
-            
+
+            Die();
+        }
+
+        protected virtual void Die()
+        {
             EnemySpawner.Instance.KillEnemy(this);
         }
         

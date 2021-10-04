@@ -190,17 +190,17 @@ MonoBehaviour:
   startCoins: 1000
   plannedEnemies:
   - time: 2
-    enemyPrefab: {fileID: 4397266751934811028, guid: 813b354510124452c87c9f7049907853, type: 3}
+    enemyPrefab: {fileID: 4397266751934811028, guid: f99f1b5f48c1f4c8587bfa6594d89934, type: 3}
     amount: 1
   - time: 5
     enemyPrefab: {fileID: 4397266751934811028, guid: 3ddf42c3caad648c498c97e3716187cf, type: 3}
-    amount: 1
+    amount: 0
   - time: 18
     enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}
-    amount: 1
+    amount: 0
   - time: 21
     enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}
-    amount: 1
+    amount: 0
   unlock: {fileID: 11400000, guid: 69c232a3c7be54fe09294ca0653a0d77, type: 2}
   requiredServersAlive: 1
 --- !u!114 &1730954315

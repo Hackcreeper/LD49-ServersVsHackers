@@ -25,7 +25,7 @@ public class Level : MonoBehaviour
             startPosition.y
         );
 
-        CameraMover.Instance.MoveTo(new Vector3(
+        CameraMover.Instance?.MoveTo(new Vector3(
             startPosition.x,
             5.42f,
             startPosition.y - 6.35f
@@ -43,7 +43,7 @@ public class Level : MonoBehaviour
 
     private void Update()
     {
-        if (_state != LevelState.Running)
+        if (_state != LevelState.Running || !FieldGenerator.Instance)
         {
             return;
         }

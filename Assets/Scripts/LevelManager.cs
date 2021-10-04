@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
         if (Instance)
         {
             Destroy(gameObject);
+            return;
         }
 
         Instance = this;
@@ -33,7 +34,12 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        // Probably added the level manually via editor
+        if (SceneManager.GetActiveScene().name != "Game")
+        {
+            return;
+        }
+
+            // Probably added the level manually via editor
         if (SceneManager.sceneCount > 1)
         {
             currentLevel = int.Parse(SceneManager.GetSceneAt(1).name.Replace("Level", ""));
@@ -45,6 +51,7 @@ public class LevelManager : MonoBehaviour
         if (_sceneToBeLoaded.HasValue)
         {
             LoadLevel(_sceneToBeLoaded.Value);
+            _sceneToBeLoaded = null;
             return;
         }
         
@@ -65,6 +72,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int levelId, bool restarting = false)
     {
+        UnlockedTowers.Instance.Unlock(levelId);
+        
         if (levelId > 1 && !restarting)
         {
             startPosition += new Vector2(45, 45);
@@ -112,7 +121,7 @@ public class LevelManager : MonoBehaviour
     public void LoadNextLevel()
     {
         var nextLevel = currentLevel + 1;
-        
+
         if (!Application.CanStreamedLevelBeLoaded($"Level{nextLevel}"))
         {
             Debug.Log("Finished the game");
@@ -130,4 +139,12 @@ public class LevelManager : MonoBehaviour
     public int GetCurrentLevel() => currentLevel;
 
     public Vector2 GetStartPosition() => startPosition;
+
+    public void StartGameInLevel(int level)
+    {
+        startPosition = Vector2.zero;
+        _sceneToBeLoaded = level;
+
+        SceneManager.LoadScene("Game");
+    }
 }

@@ -7,6 +7,7 @@ public class UnlockedTowers : MonoBehaviour
     public static UnlockedTowers Instance { get; private set; }
     
     public TowerData[] defaultTowers;
+    public int unlockedLevel = 1;
 
     private List<TowerData> _towers = new List<TowerData>();
 
@@ -29,5 +30,13 @@ public class UnlockedTowers : MonoBehaviour
     public void AddTower(TowerData tower)
     {
         _towers.Add(tower);
+    }
+
+    public void Unlock(int lvl)
+    {
+        if (lvl > unlockedLevel)
+        {
+            unlockedLevel = lvl;
+        }
     }
 }

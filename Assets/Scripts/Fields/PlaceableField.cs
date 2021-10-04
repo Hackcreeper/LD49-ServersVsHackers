@@ -15,7 +15,10 @@ namespace Fields
         {
             if (Tower.OnHand)
             {
-                MeshRenderer.material = CanPlace(Tower.OnHand) ? hoverOkMaterial : hoverErrorMaterial;   
+                if (!compromised)
+                {
+                    MeshRenderer.material = CanPlace(Tower.OnHand) ? hoverOkMaterial : hoverErrorMaterial;   
+                }
             }
 
             ActiveField = this;
@@ -23,6 +26,11 @@ namespace Fields
 
         private void OnMouseExit()
         {
+            if (compromised)
+            {
+                return;
+            }
+            
             MeshRenderer.material = defaultMaterial;
             if (ActiveField == this)
             {
@@ -48,6 +56,11 @@ namespace Fields
 
         public bool CanPlace(Tower other)
         {
+            if (compromised)
+            {
+                return false;
+            }
+            
             if (Coins.Instance.amount < other.data.price)
             {
                 return false;

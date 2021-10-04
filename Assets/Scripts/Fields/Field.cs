@@ -47,6 +47,26 @@ namespace Fields
         {
             GetComponent<MeshRenderer>().material = compromisedMaterial;
             compromised = true;
+
+            if (!tower)
+            {
+                return;
+            }
+
+            if (tower is Server)
+            {
+                return;
+            }
+
+            if (tower is UsbSlot slot)
+            {
+                if (slot.pluggedTower)
+                {
+                    Destroy(slot.pluggedTower.gameObject);
+                }
+            }
+
+            Destroy(tower.gameObject);
         }
     }
 }

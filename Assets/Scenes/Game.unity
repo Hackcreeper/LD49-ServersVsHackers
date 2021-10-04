@@ -2641,10 +2641,10 @@ PrefabInstance:
     - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
       propertyPath: defaultTowers.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: a1cededdc3e33401cbd1009521304c62, type: 2}
+      objectReference: {fileID: 11400000, guid: 69c232a3c7be54fe09294ca0653a0d77, type: 2}
     - target: {fileID: 4737666419490525293, guid: 0497b4597243e46218ce754a04914a1b, type: 3}
       propertyPath: defaultTowers.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 2f911b30f723049ad9ac3518cf2ab8d0, type: 2}
+      objectReference: {fileID: 11400000, guid: 7381257c4f3554439bcad17d83eacc8f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0497b4597243e46218ce754a04914a1b, type: 3}

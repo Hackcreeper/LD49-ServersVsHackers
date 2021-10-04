@@ -75,6 +75,8 @@ MonoBehaviour:
   canTakeDamage: 1
   data: {fileID: 0}
   requiresUsb: 0
+  defaultFieldMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  holeFieldMesh: {fileID: -5495902117074765545, guid: c5caa7467d6394964b56a34f30ac3806, type: 3}
 --- !u!1001 &8751063753449914555
 PrefabInstance:
   m_ObjectHideFlags: 0

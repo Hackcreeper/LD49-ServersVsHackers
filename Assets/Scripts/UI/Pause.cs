@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using Towers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,12 +38,19 @@ namespace UI
         {
             if (!Input.GetKeyDown(KeyCode.Escape) &&
                 !Input.GetKeyDown(KeyCode.Backspace) &&
-                !Input.GetKeyDown(KeyCode.P)
+                !Input.GetKeyDown(KeyCode.P) &&
+                !Input.GetMouseButtonDown(1)
             )
             {
                 return;
             }
 
+            if (Tower.OnHand)
+            {
+                Destroy(Tower.OnHand.gameObject);
+                return;
+            }
+            
             if (paused)
             {
                 UnpauseGame();

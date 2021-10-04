@@ -21,7 +21,7 @@ namespace Enemies
         
         #region UNITY
         
-        private void Start()
+        protected virtual void Start()
         {
             TargetNextField();
         }
@@ -129,7 +129,7 @@ namespace Enemies
         
         #region GENERAL
 
-        protected bool MustStop()
+        protected virtual bool MustStop()
         {
             return (currentField.GetTower() && !currentField.GetTower().walkable) || _locked;
         }

@@ -1,0 +1,4 @@
+red	FF0000
+lila	FFB8FF
+blue	00FFFF
+orange	FFB852

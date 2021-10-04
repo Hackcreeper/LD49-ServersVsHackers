@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     public int startCoins;
     public PlannedEnemy[] plannedEnemies;
     public TowerData unlock;
+    public int requiredServersAlive = 3;
 
     private List<PlannedEnemy> _planned = new List<PlannedEnemy>();
     private int _lastSpawned = -1;
@@ -48,6 +49,12 @@ public class Level : MonoBehaviour
             return;
         }
 
+        if (FieldGenerator.Instance.AliveServers() < requiredServersAlive)
+        {
+            GameOver();
+            return;
+        }
+        
         if (_lastSpawned + 1 >= _planned.Count)
         {
             CheckForWin();
@@ -62,6 +69,13 @@ public class Level : MonoBehaviour
             EnemySpawner.Instance.SpawnEnemy(_planned[_lastSpawned + 1].enemyPrefab, _planned[_lastSpawned + 1].amount);
             _lastSpawned++;
         }
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over!");
+        
+        _state = LevelState.Failed;
     }
 
     private void CheckForWin()
@@ -93,6 +107,6 @@ public class Level : MonoBehaviour
         Started,
         Running,
         Finished,
-        Lost
+        Failed
     }
 }

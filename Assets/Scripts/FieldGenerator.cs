@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Fields;
 using UnityEngine;
 
@@ -104,5 +105,19 @@ public class FieldGenerator : MonoBehaviour
         {
             field.Compromise();
         }
+    }
+
+    public int AliveServers()
+    {
+        var corrupted = 0;
+        foreach (var row in _rows.Values)
+        {
+            if (row.Any(field => field.compromised))
+            {
+                corrupted++;
+            }
+        }
+
+        return _rows.Count - corrupted;
     }
 }

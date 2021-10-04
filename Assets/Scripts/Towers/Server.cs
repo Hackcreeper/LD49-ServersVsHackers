@@ -21,12 +21,7 @@ namespace Towers
             var materials = errorMeshRenderer.materials;
             materials[lightMaterialId] = corruptedMaterial;
             errorMeshRenderer.materials = materials;
-            
-            // foreach (var meshRenderer in _meshRenderers)
-            // {
-            //     meshRenderer.material = corruptedMaterial;
-            // }
-
+         
             FieldGenerator.Instance.CompromiseRow(row);
         }
 

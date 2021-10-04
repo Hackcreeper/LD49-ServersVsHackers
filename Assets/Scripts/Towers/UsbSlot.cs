@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Towers
 {
     public class UsbSlot : Tower

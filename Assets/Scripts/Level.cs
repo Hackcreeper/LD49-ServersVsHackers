@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using Towers;
 using UI;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class Level : MonoBehaviour
 {
     public int startCoins;
     public PlannedEnemy[] plannedEnemies;
+    public TowerData unlock;
 
     private List<PlannedEnemy> _planned = new List<PlannedEnemy>();
     private int _lastSpawned = -1;
@@ -16,6 +18,8 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
+        TowerButtons.Instance.Rerender();
+        
         _planned.AddRange(plannedEnemies);
         _planned.Sort((a, b) => a.time - b.time);
 
@@ -53,8 +57,11 @@ public class Level : MonoBehaviour
         {
             return;
         }
+
+        _state = LevelState.Finished;
         
-        LevelManager.Instance.LoadNextLevel();
+        Congratulations.Instance.Show(unlock);
+        UnlockedTowers.Instance.AddTower(unlock);
     }
 
     private IEnumerator ShowIntro()

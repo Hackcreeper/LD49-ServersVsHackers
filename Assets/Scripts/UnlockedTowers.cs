@@ -25,4 +25,9 @@ public class UnlockedTowers : MonoBehaviour
     }
 
     public TowerData[] GetAllTowers() => _towers.ToArray();
+
+    public void AddTower(TowerData tower)
+    {
+        _towers.Add(tower);
+    }
 }

@@ -75,8 +75,14 @@ MonoBehaviour:
   canTakeDamage: 1
   data: {fileID: 0}
   requiresUsb: 0
+  walkable: 1
   defaultFieldMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   holeFieldMesh: {fileID: -5495902117074765545, guid: c5caa7467d6394964b56a34f30ac3806, type: 3}
+  suckSpeed: 1
+  cooldown: 10
+  defaultMaterial: {fileID: 2100000, guid: 99d37cece7c5f47ccb2ab53f2f2b76ce, type: 2}
+  cooldownMaterial: {fileID: 2100000, guid: 19dc379c100374a90947e1c691775bbc, type: 2}
+  meshRenderer: {fileID: 7976881815926299711}
 --- !u!1001 &8751063753449914555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +146,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0a44d443bbcfc42919db4f59323d85b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 99d37cece7c5f47ccb2ab53f2f2b76ce, type: 2}
     - target: {fileID: 919132149155446097, guid: 0a44d443bbcfc42919db4f59323d85b8, type: 3}
       propertyPath: m_Name
       value: vpn
@@ -149,5 +159,10 @@ PrefabInstance:
 --- !u!4 &9149273075488958288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a44d443bbcfc42919db4f59323d85b8, type: 3}
+  m_PrefabInstance: {fileID: 8751063753449914555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7976881815926299711 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 0a44d443bbcfc42919db4f59323d85b8, type: 3}
   m_PrefabInstance: {fileID: 8751063753449914555}
   m_PrefabAsset: {fileID: 0}

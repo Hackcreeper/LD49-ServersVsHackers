@@ -5,10 +5,11 @@ namespace Enemies
     public class LittleCritter : Enemy
     {
         public Animator animator;
+        private static readonly int Walking = Animator.StringToHash("walking");
 
         protected override void Update()
         {
-            animator?.SetBool("walking", currentField.GetTower() == null);
+            animator?.SetBool(Walking, !MustStop());
             
             base.Update();
         }

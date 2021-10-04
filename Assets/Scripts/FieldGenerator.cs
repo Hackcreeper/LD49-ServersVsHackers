@@ -73,6 +73,11 @@ public class FieldGenerator : MonoBehaviour
         
         return _rows[row][currentField.column - 1];
     }
+
+    public Field GetLastFieldInRow(int row)
+    {
+        return _rows[row][columns + 1];
+    }
     
     public Field GetNextFieldInRow(int row, Field currentField)
     {

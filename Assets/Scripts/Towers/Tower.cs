@@ -1,3 +1,4 @@
+using Enemies;
 using Fields;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace Towers
         public bool canTakeDamage = true;
         public TowerData data;
         public bool requiresUsb;
+        public bool walkable;
 
         private Camera _camera;
         private bool _onCurrentLevel = true;
@@ -149,6 +151,10 @@ namespace Towers
 
         protected abstract void OnPlace();
         protected abstract void OnUpdate();
+
+        public virtual void OnWalkOver(Enemy enemy)
+        {
+        }
 
         #endregion
         

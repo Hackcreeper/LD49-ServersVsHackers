@@ -70,8 +70,8 @@ ModelImporter:
       name: Stand
       takeName: Scene
       internalID: 0
-      firstFrame: 5
-      lastFrame: 6
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

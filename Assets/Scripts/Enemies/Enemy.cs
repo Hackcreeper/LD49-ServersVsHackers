@@ -13,6 +13,8 @@ namespace Enemies
         private float _timer;
         private float _attackTimer;
         private Vector3 _startPosition;
+        private bool _informedField;
+        private bool _locked;
 
         public Field currentField;
         public Field targetField;
@@ -23,10 +25,15 @@ namespace Enemies
         {
             TargetNextField();
         }
-
+        
         protected virtual void Update()
         {
-            if (currentField.GetTower())
+            if (_locked)
+            {
+                return;
+            }
+            
+            if (MustStop())
             {
                 transform.position = GetRealPositionOfField(currentField);
                 _timer = 0;
@@ -50,6 +57,15 @@ namespace Enemies
                 _timer
             );
 
+            if (currentField.GetTower() && currentField.GetTower().walkable)
+            {
+                if (_timer > 0.4f && !_informedField)
+                {
+                    currentField.GetTower().OnWalkOver(this);
+                    _informedField = true;
+                }
+            }
+            
             if (_timer >= 1f)
             {
                 currentField = targetField;
@@ -65,17 +81,25 @@ namespace Enemies
         
         private void TargetNextField()
         {
+            _informedField = false;
             SetTarget(FieldGenerator.Instance.GetPreviousFieldInRow(row, currentField));
         }
 
-        private void SetTarget(Field target)
+        public void SetTargetWithStartPosition(Field target, Vector3 startPosition, float percentage)
+        {
+            _timer = percentage;
+            _startPosition = startPosition;
+            targetField = target;            
+        }
+        
+        public void SetTarget(Field target)
         {
             _timer = 0f;
             _startPosition = transform.position;
             targetField = target;
         }
 
-        private Vector3 GetRealPositionOfField(Field field)
+        public Vector3 GetRealPositionOfField(Field field)
         {
             var position = field.transform.position;
 
@@ -99,6 +123,25 @@ namespace Enemies
             }
             
             EnemySpawner.Instance.KillEnemy(this);
+        }
+        
+        #endregion
+        
+        #region GENERAL
+
+        protected bool MustStop()
+        {
+            return (currentField.GetTower() && !currentField.GetTower().walkable) || _locked;
+        }
+
+        public void Lock()
+        {
+            _locked = true;
+        }
+
+        public void Unlock()
+        {
+            _locked = false;
         }
         
         #endregion

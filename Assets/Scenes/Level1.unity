@@ -202,6 +202,7 @@ MonoBehaviour:
     enemyPrefab: {fileID: 4397266751934811028, guid: 74815b55a33344e7d86d025f2321d030, type: 3}
     amount: 1
   unlock: {fileID: 11400000, guid: 69c232a3c7be54fe09294ca0653a0d77, type: 2}
+  requiredServersAlive: 1
 --- !u!114 &1730954315
 MonoBehaviour:
   m_ObjectHideFlags: 0

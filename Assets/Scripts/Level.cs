@@ -15,7 +15,7 @@ public class Level : MonoBehaviour
     private List<PlannedEnemy> _planned = new List<PlannedEnemy>();
     private int _lastSpawned = -1;
     private float _timer = 0;
-    private LevelState _state = LevelState.Started;
+    private LevelState _state = LevelState.Running;
 
     private void Start()
     {
@@ -39,7 +39,7 @@ public class Level : MonoBehaviour
 
         Coins.Instance.amount = startCoins;
 
-        StartCoroutine(ShowIntro());
+        Banner.Instance.UpdateLevelName();
     }
 
     private void Update()
@@ -89,21 +89,9 @@ public class Level : MonoBehaviour
         Congratulations.Instance.Show(unlock);
         UnlockedTowers.Instance.AddTower(unlock);
     }
-
-    private IEnumerator ShowIntro()
-    {
-        Banner.Instance.ShowIntroBanner();
-
-        yield return new WaitForSeconds(2);
-
-        _state = LevelState.Running;
-
-        Banner.Instance.HideIntroBanner();
-    }
-
+    
     private enum LevelState
     {
-        Started,
         Running,
         Finished,
         Failed

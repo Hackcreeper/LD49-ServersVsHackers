@@ -7,8 +7,6 @@ namespace UI
     {
         public static Banner Instance { get; private set; }
 
-        public GameObject introBanner;
-        public GameObject winBanner;
         public TextMeshProUGUI levelNameText;
 
         private void Awake()
@@ -16,15 +14,9 @@ namespace UI
             Instance = this;
         }
 
-        public void ShowIntroBanner()
+        public void UpdateLevelName()
         {
             levelNameText.text = $"Level {LevelManager.Instance.GetCurrentLevel()}";
-            introBanner.SetActive(true);
-        }
-        
-        public void HideIntroBanner()
-        {
-            introBanner.SetActive(false);
         }
     }
 }
